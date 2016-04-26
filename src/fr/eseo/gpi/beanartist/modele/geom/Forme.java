@@ -4,17 +4,17 @@ import java.text.DecimalFormat;
 
 public abstract class Forme {
 	
-	static final Point POINT_PAR_DÉFAUT = new Point(0,0);
-	public static final int LARGEUR_PAR_DÉFAUT = 100;
-	public static final int HAUTEUR_PAR_DÉFAUT = 150;
+	static final Point POINT_PAR_DÃ‰FAUT = new Point(0,0);
+	public static final int LARGEUR_PAR_DÃ‰FAUT = 100;
+	public static final int HAUTEUR_PAR_DÃ‰FAUT = 150;
 
 	private int largeur ;
 	private int hauteur ;
 	private Point position ;
 
 	public Forme (){
-		this ( new Point (), HAUTEUR_PAR_DÉFAUT ,
-		LARGEUR_PAR_DÉFAUT );
+		this ( new Point (), HAUTEUR_PAR_DÃ‰FAUT ,
+		LARGEUR_PAR_DÃ‰FAUT );
 	}
 
 	public Forme (int x, int y, int largeur2 , int hauteur2 ){
@@ -32,7 +32,7 @@ public abstract class Forme {
 	}
 	
 	public Forme ( Point position ){
-		this ( position , HAUTEUR_PAR_DÉFAUT , LARGEUR_PAR_DÉFAUT );
+		this ( position , HAUTEUR_PAR_DÃ‰FAUT , LARGEUR_PAR_DÃ‰FAUT );
 	}
 	
 	public Point getPosition (){
@@ -90,12 +90,12 @@ public abstract class Forme {
 		return this.getPosition().getY()+this.getHauteur();
 	}
 	
-	public void déplacerVers(int x, int y){
+	public void dÃ©placerVers(int x, int y){
 		this.getPosition().setX(x);
 		this.getPosition().setY(y);
 	}
 	
-	public void déplacerDe(int deltaX, int deltaY){
+	public void dÃ©placerDe(int deltaX, int deltaY){
 		int x2 = this.getPosition().getX() + deltaX;
 		int y2 = this.getPosition().getY() + deltaY;
 		this.getPosition().setX(x2);
@@ -107,13 +107,13 @@ public abstract class Forme {
 		String s = "["+this.getClass().getSimpleName()+"] ";
 		s+= "pos : ("+this.getPosition().getX()+","+this.getPosition().getY()+") ";
 		s+= "dim : "+this.getLargeur()+" x "+this.getHauteur()+" ";
-		s+= "périmètre : "+ formatter.format(this.périmètre())+" aire : "+ formatter.format(this.aire());
+		s+= "pÃ©rimÃ¨tre : "+ formatter.format(this.pÃ©rimÃ¨tre())+" aire : "+ formatter.format(this.aire());
 		return s;
 	}
 	
 	public abstract double aire();
 	
-	public abstract double périmètre();
+	public abstract double pÃ©rimÃ¨tre();
 	
 	public abstract boolean contient(int x, int y);
 	

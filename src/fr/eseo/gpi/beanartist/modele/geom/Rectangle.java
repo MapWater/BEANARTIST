@@ -4,7 +4,7 @@ public class Rectangle extends Forme{
 	
 	static int nbRectangles;
 	
-	//-------------------     Méthodes    -----------------
+	//-------------------     MÃ©thodes    -----------------
 	
 	//					CONSTRUCTEURS
 
@@ -14,7 +14,7 @@ public class Rectangle extends Forme{
 		Rectangle.incNbRectangles();
 	}
 	
-	// Constructeur  - Coordonnes renseignées
+	// Constructeur  - Coordonnes renseignï¿½es
 	public 	Rectangle(int x, int y, int largeur, int hauteur){	
 		this(new Point(x, y), largeur, hauteur);
 	}
@@ -26,12 +26,12 @@ public class Rectangle extends Forme{
 	
 	// Constructeur  - Dimensions non renseignees	
 	public Rectangle(Point point){
-		this(point, Forme.LARGEUR_PAR_DÉFAUT, Forme.HAUTEUR_PAR_DÉFAUT);
+		this(point, Forme.LARGEUR_PAR_DÃ‰FAUT, Forme.HAUTEUR_PAR_DÃ‰FAUT);
 	}
 	
 	// Constructeur  - Dimensions non renseignees
 	public Rectangle(){
-		this(Forme.POINT_PAR_DÉFAUT, Forme.LARGEUR_PAR_DÉFAUT, Forme.HAUTEUR_PAR_DÉFAUT);
+		this(Forme.POINT_PAR_DÃ‰FAUT, Forme.LARGEUR_PAR_DÃ‰FAUT, Forme.HAUTEUR_PAR_DÃ‰FAUT);
 	}
 
 	//					AUTRES METHODES
@@ -40,7 +40,7 @@ public class Rectangle extends Forme{
 		Rectangle.nbRectangles++;
 	}
 	
-	public double périmètre(){
+	public double pÃ©rimÃ¨tre(){
 		return 2*(this.getLargeur()+this.getHauteur());
 	}
 	

@@ -2,7 +2,7 @@ package fr.eseo.gpi.beanartist.modele.geom;
 
 public class Ligne extends Forme{
 	
-	public static final double EPSILON = 1;
+	public static final double EPSILON = 0.7;
 	
 			// ----------   CONSTRUCTEURS   ----------
 			
@@ -15,11 +15,11 @@ public class Ligne extends Forme{
 	}
 	
 	public Ligne(Point position){
-		this(position, Forme.LARGEUR_PAR_DÉFAUT, Forme.HAUTEUR_PAR_DÉFAUT);
+		this(position, Forme.LARGEUR_PAR_DÃ‰FAUT, Forme.HAUTEUR_PAR_DÃ‰FAUT);
 	}
 	
 	public Ligne(int largeur, int hauteur){
-		this(Forme.POINT_PAR_DÉFAUT, largeur, hauteur);
+		this(Forme.POINT_PAR_DÃ‰FAUT, largeur, hauteur);
 	}
 	
 	public Ligne(Point pos1, Point pos2){
@@ -31,8 +31,8 @@ public class Ligne extends Forme{
 	}
 	
 	public Ligne(){
-		this(Forme.POINT_PAR_DÉFAUT, Forme.LARGEUR_PAR_DÉFAUT, 
-															Forme.HAUTEUR_PAR_DÉFAUT);
+		this(Forme.POINT_PAR_DÃ‰FAUT, Forme.LARGEUR_PAR_DÃ‰FAUT, 
+															Forme.HAUTEUR_PAR_DÃ‰FAUT);
 	}
 	
 			// --------   ACCESSEURS   ----------
@@ -69,7 +69,7 @@ public class Ligne extends Forme{
 	}
 	
 	public int getP2X(){
-		return this.getP1().getX();
+		return this.getP2().getX();
 	}
 	
 	public int getP2Y(){
@@ -140,7 +140,7 @@ public class Ligne extends Forme{
 		this.setP2(nouveauPoint);
 	}
 	
-	public double périmètre(){
+	public double pÃ©rimÃ¨tre(){
 		return Math.sqrt(this.getLargeur()*this.getLargeur()+this.getHauteur()*this.getHauteur());
 	}
 	
@@ -149,18 +149,39 @@ public class Ligne extends Forme{
 	}
 	
 	public boolean contient(int x, int y ){
-		return this.contient(new Point(x, y));
+		boolean contient = false;
+		Point pA, pB;
+		if(this.getP2X()>this.getP1X()){
+			pA = this.getP1();
+			pB = this.getP2();
+		} else {
+			pA = this.getP2();
+			pB = this.getP1();
+		}
+		double coef = (double)this.getHauteur()/(double)this.getLargeur();
+		int deltaX = Math.abs(x-pA.getX());
+//		System.out.println("p1 : "+this.getP1X()+","+this.getP1Y());
+//		System.out.println("p2 : "+this.getP2X()+","+this.getP2Y());
+//		System.out.println("pA : "+pA.getX()+","+pA.getY());
+//		System.out.println("pB : "+pB.getX()+","+pB.getY());
+//		System.out.println("hauteur : "+this.getHauteur()+" largeur :"+this.getLargeur());
+//		System.out.println("delta : "+deltaX+" coef : "+(coef));
+//		System.out.println(""+(pA.getY()+coef*deltaX - y));
+		if(Math.abs(pA.getY()+coef*deltaX - y) < EPSILON){
+			contient = true;
+//			System.out.println(""+contient);
+		}
+		return contient;
 	}
 	
 	public boolean contient(Point p){
-		double coef = (this.getP2Y()-this.getP1Y())/(this.getP2X()-this.getP1X());
-		for(int i = ; i)
+		return this.contient(p.getX(), p.getY());
 	}
 	
 	public String toString(){
 		String s = "[Ligne] p1 : ("+this.getP1().getX()+","+this.getP1().getY()+"),  ";
 		s+= "p2 : ("+this.getP2().getX()+","+this.getP2().getY()+") ";
-		s+= "longueur : "+this.périmètre();	
+		s+= "longueur : "+this.pÃ©rimÃ¨tre();	
 		return s;
 	}
 }

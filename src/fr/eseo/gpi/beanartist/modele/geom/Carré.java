@@ -1,29 +1,29 @@
 package fr.eseo.gpi.beanartist.modele.geom;
 
-public class Carré extends Rectangle{
+public class CarrÃ© extends Rectangle{
 	
-	//-------------------     Méthodes    -----------------
+	//-------------------     MÃ©thodes    -----------------
 
 	//					CONSTRUCTEURS
 	
-	public Carré (Point position, int cote){
+	public CarrÃ© (Point position, int cote){
 		super(position, cote, cote);
 	}
 	
-	public Carré (int x, int y, int cote){
+	public CarrÃ© (int x, int y, int cote){
 		this(new Point(x, y), cote);
 	}
 	
-	public Carré (Point position){
-		this(position, Rectangle.LARGEUR_PAR_DÉFAUT);
+	public CarrÃ© (Point position){
+		this(position, Rectangle.LARGEUR_PAR_DÃ‰FAUT);
 	}
 	
-	public Carré (int cote){
-		this(Rectangle.POINT_PAR_DÉFAUT, cote );
+	public CarrÃ© (int cote){
+		this(Rectangle.POINT_PAR_DÃ‰FAUT, cote );
 	}
 
-	public Carré(){
-		this(POINT_PAR_DÉFAUT, Rectangle.LARGEUR_PAR_DÉFAUT);
+	public CarrÃ©(){
+		this(POINT_PAR_DÃ‰FAUT, Rectangle.LARGEUR_PAR_DÃ‰FAUT);
 	}
 
 	//					ACCESSEURS

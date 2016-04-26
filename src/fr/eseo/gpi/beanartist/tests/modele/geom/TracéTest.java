@@ -3,7 +3,7 @@ package fr.eseo.gpi.beanartist.tests.modele.geom;
 import fr.eseo.gpi.beanartist.modele.geom.Point;
 import fr.eseo.gpi.beanartist.modele.geom.Ligne;
 
-public class LigneTest{
+public class TracéTest{
 	public static void main(String args[]){
 		Point p1 = new Point();
 		Point p2 = new Point(200, 200);
@@ -13,7 +13,6 @@ public class LigneTest{
 		Ligne l1 = new Ligne(p2, 10, 0);
 		Ligne l2 = new Ligne(p1, 0, 10);
 		Ligne l3 = new Ligne(p1, 3, 4);
-		Ligne l4 = new Ligne(10,10, 60,50);
 		
 		System.out.println("\n-------------------- Initialisation des lignes --------------------");
 		System.out.println(l1.toString());
@@ -36,10 +35,6 @@ public class LigneTest{
 		l1.deplacerP2De(-280, -300);
 		System.out.println(l1.toString());
 		
-		System.out.println("\n-------------------- CONTIENT --------------------");
-		l4.contient(30,26);
-		System.out.println("");
-		l4.contient(20,26);
 
 	}
 }

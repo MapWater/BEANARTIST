@@ -1,17 +1,17 @@
 package fr.eseo.gpi.beanartist.tests.modele.geom;
 
 import fr.eseo.gpi.beanartist.modele.geom.Point;
-import fr.eseo.gpi.beanartist.modele.geom.Carré;
+import fr.eseo.gpi.beanartist.modele.geom.CarrÃ©;
 
-public class CarréTest{
+public class CarrÃ©Test{
 	public static void main(String args[]){
 		Point p1 = new Point(1,1);
 		
-		Carré c1 = new Carré(p1, 10);
-		Carré c2 = new Carré(200);
-		Carré c3 = new Carré(new Point(141,62));
-		Carré c4 = new Carré(1,2,3);
-		Carré c5 = new Carré();
+		CarrÃ© c1 = new CarrÃ©(p1, 10);
+		CarrÃ© c2 = new CarrÃ©(200);
+		CarrÃ© c3 = new CarrÃ©(new Point(141,62));
+		CarrÃ© c4 = new CarrÃ©(1,2,3);
+		CarrÃ© c5 = new CarrÃ©();
 		
 		System.out.println(c1);
 		System.out.println(c2);
