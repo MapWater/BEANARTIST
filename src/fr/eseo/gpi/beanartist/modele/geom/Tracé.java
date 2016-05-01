@@ -3,34 +3,41 @@ package fr.eseo.gpi.beanartist.modele.geom;
 import java.util.ArrayList;
 import java.util.List;
 import java.lang.Math;
+import java.text.DecimalFormat;
 
 public class Tracé extends Forme{
-	public static final double EPSILON = 0.001;
+	public static final double EPSILON = 1;
 
 	private List<Ligne> lignes;
 	
 	// ----------   CONSTRUCTEURS   ----------
-			
+	
 	public Tracé(Point pos1, Point pos2){
-		this.lignes = new ArrayList<Ligne>();
-		Ligne ligne  = new Ligne(pos1, pos2);
-		this.lignes.add(ligne);
-		this.setLargeur(ligne.getLargeur());
-		this.setHauteur(ligne.getHauteur());
+		this(new Ligne(pos1, pos2));
 	}
 	
 	public Tracé(Ligne ligne){
-		this.lignes = new ArrayList<Ligne>();
+		super(new Point(ligne.getMinX(), ligne.getMinY()), ligne.getLargeur(), ligne.getHauteur());
+		lignes = new ArrayList<Ligne>();
 		this.lignes.add(ligne);
-		this.setLargeur(ligne.getLargeur());
-		this.setHauteur(ligne.getHauteur());
 	}
 	
 	// --------   ACCESSEURS   ----------
-
-	 public List<Ligne> getLignes(){
+	public int getLargeur(){
+		return super.getLargeur();
+	}
+	
+	public int getHauteur(){
+		return super.getHauteur();
+	}
+		
+	public List<Ligne> getLignes(){
 		 return this.lignes;
-	 }
+	}
+	
+	public void setLignes(ArrayList<Ligne> lignes){
+		this.lignes = lignes;
+	}
 	// ----------   AUTRES METHODES   ----------
 	public Ligne getLigne(int index){
 		return this.getLignes().get(index);
@@ -114,83 +121,123 @@ public class Tracé extends Forme{
 	
 	public void ajouterLigneVers(Point pos){
 		Point dernPoint = this.getDernP2(0);
+		dernPoint.toString();
 		Ligne nouvLigne = new Ligne(dernPoint, pos);
 		this.add(nouvLigne);
-		this.calculCadre();
-		
+		this.calculCadre2();		
 	}
 	
-	public void calculCadre(){
+	public void calculCadre1(){
 		int largeur;
 		int hauteur;
-		int xMin = this.getLignes().get(0).getX(); int xMax = xMin;
-		int yMin = this.getLignes().get(0).getY(); int yMax = yMin;
+		int xMin = this.getLigne(0).getX(); int xMax = xMin;
+		int yMin = this.getLigne(0).getY(); int yMax = yMin;
+		//Tous les points sauf le dernier
 		for(Ligne l:this.getLignes()){
-			if (l.getX() < xMin){xMin = l.getX();}
-			if (l.getY() < yMin){yMin = l.getY();}
-			if (l.getX() > xMax){xMax = l.getX();}
-			if (l.getY() > yMax){yMax = l.getY();}
+			if (l.getP1X() < xMin){xMin = l.getP1X();}
+			if (l.getP1Y() < yMin){yMin = l.getP1Y();}
+			if (l.getP1X() > xMax){xMax = l.getP1X();}
+			if (l.getP1Y() > yMax){yMax = l.getP1Y();}
+		}
+		//Dernier point
+		if (this.getDernLigne(0).getP2X() < xMin){xMin = this.getDernLigne(0).getP2X();}
+		if (this.getDernLigne(0).getP2Y() < yMin){yMin = this.getDernLigne(0).getP2Y();}
+		if (this.getDernLigne(0).getP2X() > xMax){xMax = this.getDernLigne(0).getP2X();}
+		if (this.getDernLigne(0).getP2Y() > yMax){yMax = this.getDernLigne(0).getP2Y();}
+		largeur = xMax - xMin;
+		hauteur = yMax - yMin;
+		super.setLargeur(largeur);
+		super.setHauteur(hauteur);
+		super.setPosition(new Point(xMin, yMin));
+	}
+	
+	public void calculCadre2(){
+		int largeur;
+		int hauteur;
+		int xMin = this.getLigne(0).getX(); int xMax = xMin;
+		int yMin = this.getLigne(0).getY(); int yMax = yMin;
+		for(Ligne l:this.getLignes()){
+			if (l.getMinX() < xMin){xMin = l.getMinX();}
+			if (l.getMinY() < yMin){yMin = l.getMinY();}
+			if (l.getMaxX() > xMax){xMax = l.getMaxX();}
+			if (l.getMaxY() > yMax){yMax = l.getMaxY();}
 		}
 		largeur = xMax - xMin;
 		hauteur = yMax - yMin;
-		this.setLargeur(largeur);
-		this.setHauteur(hauteur);
-		this.setPosition(new Point(xMin, yMin));
+		super.setLargeur(largeur);
+		super.setHauteur(hauteur);
+		super.setPosition(new Point(xMin, yMin));
 	}
 	
 	public void déplacerDe(int deltaX, int deltaY){
-		int nouveauX = this.getPosition().getX()+deltaX;
-		int nouveauY = this.getPosition().getY()+deltaY;
-		Point nouveauPoint = new Point(nouveauX, nouveauY);
-		//System.out.println(nouveauPoint.toString());
-		this.setPosition(nouveauPoint);
+		for(Ligne ligne : this.getLignes()){
+			ligne.déplacerDe(deltaX, deltaY);
+		}
+		this.getPosition().déplacerDe(deltaX, deltaY);
 	}
 	
 	public void déplacerVers(int newX, int newY){
-		Point nouveauPoint = new Point(newX, newY);
-		this.setPosition(nouveauPoint);
+		int deltaX = newX - this.getPosition().getX();
+		int deltaY = newY - this.getPosition().getY();
+		this.déplacerDe(deltaX, deltaY);
 	}
 	
-	public void setHauteur(int nouvLargeur){
-		double coef = nouvLargeur/this.getLargeur();
-		//	CAS i=0 : PREMIERE LIGNE
-		Ligne l = new Ligne(this.getP1(0), (int)(this.getLargeur(0)*coef), (int)(this.getHauteur(0)*coef));
-		Tracé nouvTrace = new Tracé(l);
-		
-		//	AUTRES CAS
-		for(int i=1; i<this.size(); i++){
-			l = this.getLigne(i);
-			Point auxPoint = nouvTrace.getP2(i);
-			nouvTrace.add(new Ligne(auxPoint, (int)(this.getLargeur(i)*coef), (int)(this.getHauteur(i)*coef)));
+	public void déplacerVers(Point newP){
+		this.déplacerDe(newP.getX(), newP.getY());
+	}
+	
+	public void setHauteur(int nouvHauteur){
+		double coef = 0;
+		if (this.getHauteur()!=0){
+			coef = (double)nouvHauteur/(double)this.getHauteur();
 		}
-		this.calculCadre();
+		this.getLigne(0).homothétieX(coef);
+		if (this.size() > 1){
+			for(Ligne ligne : this.getLignes()){
+				int aDistY = ligne.getPosition().getY()-this.getPosition().getY();
+				int nDistY = (int)(coef*aDistY);
+				ligne.setY(this.getPosition().getY()+nDistY);
+				ligne.setHauteur((int)(coef*ligne.getHauteur()));
+			}
+		}
+		this.calculCadre2();
 	}
 	
 	public void setLargeur(int nouvLargeur){
-		double coef = nouvLargeur/this.getLargeur();
-		//	CAS i=0 : PREMIERE LIGNE
-		Ligne l = new Ligne(this.getP1(0), (int)(this.getLargeur(0)*coef), (int)(this.getHauteur(0)*coef));
-		Tracé nouvTrace = new Tracé(l);
-		
-		//	AUTRES CAS
-		for(int i=1; i<this.size(); i++){
-			l = this.getLigne(i);
-			Point auxPoint = nouvTrace.getP2(i);
-			nouvTrace.add(new Ligne(auxPoint, (int)(this.getLargeur(i)*coef), (int)(this.getHauteur(i)*coef)));
+		double coef = 0;
+		if (this.getLargeur()!=0){
+			coef = (double)nouvLargeur/(double)this.getLargeur();
 		}
-		this.calculCadre();
+		this.getLigne(0).homothétieX(coef);
+		if (this.size() > 1){
+			for(Ligne ligne : this.getLignes()){
+				int aDistX = ligne.getPosition().getX()-this.getPosition().getX();
+				int nDistX = (int)(coef*aDistX);
+				ligne.setX(this.getPosition().getX()+nDistX);
+				ligne.setLargeur((int)(coef*ligne.getLargeur()));
+			}
+		}
+		this.calculCadre2();
 	}
 	
 	public void setX(int newX){
-		
+		this.setPosition(newX, this.getPosition().getY());
 	}
 	
 	public void setY(int newY){
-		
+		this.setPosition(newY, this.getPosition().getY());
+	}
+	
+	public void setPosition(int x, int y){
+		this.setPosition(new Point(x,y));		
 	}
 	
 	public void setPosition(Point nouvPosition){
-		
+		int deltaX = nouvPosition.getX()-this.getPosition().getX();
+		int deltaY = nouvPosition.getY()-this.getPosition().getY();
+		this.déplacerDe(deltaX, deltaY);
+		super.setX(nouvPosition.getX());
+		super.setY(nouvPosition.getY());
 	}
 	
 	public double périmètre(){
@@ -211,8 +258,8 @@ public class Tracé extends Forme{
 	
 	public boolean contient(Point p){
 		boolean contient = false;
-		for(Ligne ligne:this.getLignes()){
-			if(ligne.contient(p.getX(), p.getY())) {
+		for(Ligne ligne:lignes){
+			if(ligne.contient(p)) {
 				contient = true;
 				break;
 			}
@@ -221,9 +268,12 @@ public class Tracé extends Forme{
 	}
 	
 	public String toString(){
-		//String s = "[Ligne] p1 : ("+this.getP1().getX()+","+this.getP1().getY()+"),  p2 : ("+this.getP2().getX()+","+this.getP2().getY()+") ";
-		//s+= "longueur : "+this.perimetre();	
-		//return s;
-		return "";
+		DecimalFormat entier = new DecimalFormat("#####");
+		DecimalFormat decimal = new DecimalFormat("####.##");
+		String s = "["+this.getClass().getSimpleName()+"] ";
+		s+= "pos : ("+this.getPosition().getX()+","+this.getPosition().getY()+") ";
+		s+= "dim : "+Math.abs(this.getLargeur())+" x "+Math.abs(this.getHauteur())+" ";
+		s+= "longueur : "+decimal.format(this.périmètre())+ " nbLignes : "+decimal.format(this.size());
+		return s;
 	}
 }

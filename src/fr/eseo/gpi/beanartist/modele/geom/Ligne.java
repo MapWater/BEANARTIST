@@ -1,8 +1,10 @@
 package fr.eseo.gpi.beanartist.modele.geom;
 
+import java.text.DecimalFormat;
+
 public class Ligne extends Forme{
 	
-	public static final double EPSILON = 0.7;
+	public static final double EPSILON = 0.1;
 	
 			// ----------   CONSTRUCTEURS   ----------
 			
@@ -47,6 +49,10 @@ public class Ligne extends Forme{
 		this.setP2(p2);
 	}
 	
+	public void setP1(int x, int y){
+		this.setP1(new Point(x,y));		
+	}
+	
 	public Point getP2(){
 		int p2X = this.getP1().getX()+this.getLargeur();
 		int p2Y = this.getP1().getY()+this.getHauteur();
@@ -56,6 +62,10 @@ public class Ligne extends Forme{
 	public void setP2(Point autrePosition){
 		this.setLargeur(autrePosition.getX() - this.getP1().getX() );
 		this.setHauteur(autrePosition.getY() - this.getP1().getY() );
+	}
+	
+	public void setP2(int x, int y){
+		this.setP2(new Point(x,y));		
 	}
 	
 	// ----------   AUTRES METHODES   ----------
@@ -140,6 +150,22 @@ public class Ligne extends Forme{
 		this.setP2(nouveauPoint);
 	}
 	
+	public void déplacerDe(int deltaX, int deltaY){
+		this.setPosition(new Point(this.getPosition().getX()+deltaX, this.getPosition().getY()+deltaY));
+	}
+	
+	public void déplacerVers(Point p){
+		this.setPosition(p);
+	}
+	
+	public void homothétieX(double coef){
+		this.setP2((int)(this.getP1X()+(double)this.getLargeur()*coef), this.getP2Y());
+	}
+	
+	public void homothétieY(double coef){
+		this.setP2(this.getP2X(), (int)(this.getP1Y()+(double)this.getHauteur()*coef));
+	}
+	
 	public double périmètre(){
 		return Math.sqrt(this.getLargeur()*this.getLargeur()+this.getHauteur()*this.getHauteur());
 	}
@@ -149,29 +175,13 @@ public class Ligne extends Forme{
 	}
 	
 	public boolean contient(int x, int y ){
-		boolean contient = false;
-		Point pA, pB;
-		if(this.getP2X()>this.getP1X()){
-			pA = this.getP1();
-			pB = this.getP2();
-		} else {
-			pA = this.getP2();
-			pB = this.getP1();
-		}
-		double coef = (double)this.getHauteur()/(double)this.getLargeur();
-		int deltaX = Math.abs(x-pA.getX());
-//		System.out.println("p1 : "+this.getP1X()+","+this.getP1Y());
-//		System.out.println("p2 : "+this.getP2X()+","+this.getP2Y());
-//		System.out.println("pA : "+pA.getX()+","+pA.getY());
-//		System.out.println("pB : "+pB.getX()+","+pB.getY());
-//		System.out.println("hauteur : "+this.getHauteur()+" largeur :"+this.getLargeur());
-//		System.out.println("delta : "+deltaX+" coef : "+(coef));
-//		System.out.println(""+(pA.getY()+coef*deltaX - y));
-		if(Math.abs(pA.getY()+coef*deltaX - y) < EPSILON){
-			contient = true;
-//			System.out.println(""+contient);
-		}
-		return contient;
+		double X1 = this.getP1X()-x;
+		double Y1 = this.getP1Y()-y;
+		double X2 = this.getP2X()-x;
+		double Y2 = this.getP2Y()-y;
+		double d1 = Math.sqrt(Math.pow(X1,2)+Math.pow(Y1,2));
+		double d2 = Math.sqrt(Math.pow(X2,2)+Math.pow(Y2,2));
+		return (d2+d1 - this.périmètre() < EPSILON);
 	}
 	
 	public boolean contient(Point p){
@@ -179,9 +189,10 @@ public class Ligne extends Forme{
 	}
 	
 	public String toString(){
+		DecimalFormat formatter = new DecimalFormat("###.##");
 		String s = "[Ligne] p1 : ("+this.getP1().getX()+","+this.getP1().getY()+"),  ";
 		s+= "p2 : ("+this.getP2().getX()+","+this.getP2().getY()+") ";
-		s+= "longueur : "+this.périmètre();	
+		s+= "longueur : "+formatter.format(this.périmètre());	
 		return s;
 	}
 }

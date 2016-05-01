@@ -8,7 +8,8 @@ public class LigneTest{
 		Point p1 = new Point();
 		Point p2 = new Point(200, 200);
 		Point p3 = new Point(300, 300);
-		Point p4 = new Point(404, 404);
+		Point p4 = new Point(400, 400);
+		Point p5 = new Point(400, 410);
 		
 		Ligne l1 = new Ligne(p2, 10, 0);
 		Ligne l2 = new Ligne(p1, 0, 10);
@@ -40,6 +41,10 @@ public class LigneTest{
 		l4.contient(30,26);
 		System.out.println("");
 		l4.contient(20,26);
-
+		
+		System.out.println(l4.getMinX());
+		System.out.println(l4.getMaxX());
+		System.out.println(l4.getMinY());
+		System.out.println(l4.getMaxY());
 	}
 }

@@ -22,9 +22,9 @@ public abstract class Forme {
 	}
 
 	public Forme ( Point position2 , int largeur2 , int hauteur2 ){
-		setPosition ( position2 );
-		setLargeur ( largeur2 );
-		setHauteur ( hauteur2 );
+		this.position = position2;
+		this.largeur = largeur2;
+		this.hauteur = hauteur2;
 	}
 	
 	public Forme (int largeur , int hauteur ){
