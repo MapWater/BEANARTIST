@@ -208,7 +208,6 @@ public class Tracé extends Forme{
 		if (this.getLargeur()!=0){
 			coef = (double)nouvLargeur/(double)this.getLargeur();
 		}
-		this.getLigne(0).homothétieX(coef);
 		if (this.size() > 1){
 			for(Ligne ligne : this.getLignes()){
 				int aDistX = ligne.getPosition().getX()-this.getPosition().getX();
