@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+
+<Dessin>
+	<Auteur prenom='Clement' nom ='Begnaud'/> 
+	<ZoneDeDessin>
+		<Fond couleur='white' largeur='100' hauteur='100'/>
+		<vueFormes>
+			<VueRectangle couleurFond='pink' couleurTrait='black'>
+				<Rectangle largeur='8' hauteur='12' abscisse='6' ordonnee='5'/>
+			</VueRectangle>
+			<VueTrace couleurTrait = 'black'>
+				<Trace largeur='24' hauteur='18' abscisse='42' ordonnee='13'>
+					<Ligne largeur='12' hauteur='12' abscisse='42' ordonnee='13'/>
+					<Ligne largeur='12' hauteur='6' abscisse='54' ordonnee='25'/>
+				</Trace>
+			</VueTrace>
+			<VueCarre couleurFond='yellow' couleurTrait='red'>
+				<Carre largeur='8' hauteur='12' abscisse='6' ordonnee='5'/>
+			</VueCarre>
+			<VueLigne couleurTrait='blue'>
+				<Ligne abscisse1='4' ordonnnee1='5' abscisse2='8' ordonnee2='11'/>
+			</VueLigne>
+		</vueFormes>
+	</ZoneDeDessin>
+</Dessin>
