@@ -5,9 +5,7 @@
 	<ZoneDeDessin>
 		<Fond couleur='white' largeur='100' hauteur='100'/>
 		<Rectangle largeur='8' hauteur='12' abscisse='6' ordonnee='5' couleurFond='pink'/>
-		<Carre cote='8' abscisse='6' ordonnee='5' couleurFond='yellow' />
-		<Ellipse largeur='8' hauteur='12' abscisse='6' ordonnee='5' couleurFond='pink'/>
-		<Cercle cote='8' abscisse='6' ordonnee='5' couleurFond='yellow' />
+		<Carre largeur='8' hauteur='12' abscisse='6' ordonnee='5' couleurFond='yellow' couleurTrait='red'/>
 		<Ligne abscisse1='4' ordonnnee1='5' abscisse2='8' ordonnee2='11' couleurFond='blue'/>
 		<Trace largeur='24' hauteur='18' abscisse='42' ordonnee='13' couleurFond = 'black'>
 			<Ligne largeur='12' hauteur='12' abscisse='42' ordonnee='13'/>

@@ -91,6 +91,17 @@ public class LecteurXML extends ProcesseurDOM {
 		List<VueForme> dessin = new ArrayList<>();
 		chargeDocument(nomFichier);
 		Element racine = getDocument().getDocumentElement();
+		NodeList noeudsFils = racine.getChildNodes();
+		for (int i = 0; i < noeudsFils.getLength(); i++){
+			Node noeud = noeudsFils.item(i);
+			System.out.println(racine.getChildNodes().item(i).getNodeName());
+			if (noeud.getNodeType() == Node.ELEMENT_NODE){
+				Element élémentFils = (Element) noeud;
+				
+			}
+			else if (noeud.getNodeType() == Node.TEXT_NODE){
+			}
+		}
 		// Pour chaque noeud fils de l'élément racine du document,
 		// si le noeud est un élément DOM, convertir cet élément en une vue sur
 		// la forme que l'élément représente en utilisant la méthode
@@ -109,7 +120,8 @@ public class LecteurXML extends ProcesseurDOM {
 		VueForme vue = null;
 		String nom = element.getNodeName();
 		boolean rempli = false;
-		Color couleur = Color.BLUE;
+		
+		Color couleur = Color.blue; //(""+element.getAttribute("couleurFond"));
 		if (nom.equals("à modifier !")) {
 			Rectangle forme = créeRectangle(element);
 			vue = new VueRectangle(forme, couleur, rempli);
@@ -143,7 +155,11 @@ public class LecteurXML extends ProcesseurDOM {
 	 * @return le rectangle stocké dans l'élément considéré
 	 */
 	public Rectangle créeRectangle(Element element) {
-		return null;
+		int largeur = Integer.parseInt(element.getAttribute("largeur"));
+		int hauteur = Integer.parseInt(element.getAttribute("hauteur"));
+		int abscisse = Integer.parseInt(element.getAttribute("abscisse")); 
+		int ordonnée = Integer.parseInt(element.getAttribute("ordonnée"));
+		return new Rectangle(abscisse, ordonnée, largeur, hauteur);
 	}
 
 	/**
@@ -152,7 +168,10 @@ public class LecteurXML extends ProcesseurDOM {
 	 * @return le carré stocké dans l'élément considéré
 	 */
 	public Carré créeCarré(Element element) {
-		return null;
+		int largeur = Integer.parseInt(element.getAttribute("largeur"));
+		int hauteur = Integer.parseInt(element.getAttribute("hauteur"));
+		int cote = Integer.parseInt(element.getAttribute("cote"));
+		return new Carré(cote, largeur, hauteur);
 	}
 
 	/**
@@ -161,7 +180,11 @@ public class LecteurXML extends ProcesseurDOM {
 	 * @return l'ellipse stockée dans l'élément considéré
 	 */
 	public Ellipse créeEllipse(Element element) {
-		return null;
+		int largeur = Integer.parseInt(element.getAttribute("largeur"));
+		int hauteur = Integer.parseInt(element.getAttribute("hauteur"));
+		int abscisse = Integer.parseInt(element.getAttribute("abscisse")); 
+		int ordonnée = Integer.parseInt(element.getAttribute("ordonnee"));
+		return new Ellipse(abscisse, ordonnée, largeur, hauteur);
 	}
 
 	/**
@@ -170,7 +193,10 @@ public class LecteurXML extends ProcesseurDOM {
 	 * @return le cercle stocké dans l'élément considéré
 	 */
 	public Cercle créeCercle(Element element) {
-		return null;
+		int largeur = Integer.parseInt(element.getAttribute("largeur"));
+		int hauteur = Integer.parseInt(element.getAttribute("hauteur"));
+		int diametre = Integer.parseInt(element.getAttribute("diametre")); 
+		return new Cercle(diametre, largeur, hauteur);
 	}
 
 	/**
@@ -179,7 +205,11 @@ public class LecteurXML extends ProcesseurDOM {
 	 * @return la ligne stockée dans l'élément considéré
 	 */
 	public Ligne créeLigne(Element element) {
-		return null;
+		int largeur = Integer.parseInt(element.getAttribute("largeur"));
+		int hauteur = Integer.parseInt(element.getAttribute("hauteur"));
+		int abscisse = Integer.parseInt(element.getAttribute("abscisse")); 
+		int ordonnée = Integer.parseInt(element.getAttribute("ordonnee"));
+		return new Ligne(abscisse, ordonnée, largeur, hauteur);
 	}
 
 	/**
