@@ -6,26 +6,26 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.geom.Line2D;
 
-import fr.eseo.gpi.beanartist.modele.geom.Tracé;
+import fr.eseo.gpi.beanartist.modele.geom.TracÃ©;
 import fr.eseo.gpi.beanartist.modele.geom.Ligne;
 
 /**
- * @author Clément
+ * @author Clï¿½ment
  *
  */
-public class VueTracé extends VueForme{
+public class VueTracÃ© extends VueForme{
 			
 	// CONSTRUCTEURS
 	
-	public VueTracé(){
+	public VueTracÃ©(){
 		super();
 	}
 	
-	public VueTracé(Tracé trace){
-		super(trace, VueForme.COULEUR_LIGNE_PAR_DÉFAUT, true);
+	public VueTracÃ©(TracÃ© trace){
+		super(trace, VueForme.COULEUR_LIGNE_PAR_DÃ‰FAUT, true);
 	}
 	
-	public VueTracé(Tracé trace, Color couleurLigne){
+	public VueTracÃ©(TracÃ© trace, Color couleurLigne){
 		super(trace, couleurLigne, true);
 	}
 	
@@ -33,7 +33,7 @@ public class VueTracé extends VueForme{
 		
 	public void affiche(Graphics2D g2d){
 		g2d.setColor(this.getCouleurLigne());		 
-		for(Ligne ligne : ((Tracé)this.getForme()).getLignes()){
+		for(Ligne ligne : ((TracÃ©)this.getForme()).getLignes()){
 			(new VueLigne(ligne, this.getCouleurLigne())).affiche(g2d);
 		}
 	}

@@ -17,14 +17,14 @@ import fr.eseo.gpi.beanartist.modele.geom.Ligne;
 public class PanneauDessin extends JPanel{
 	
 	// Constantes
-	public static final int LARGEUR_PAR_DÉFAUT = 800;
-	public static final int HAUTEUR_PAR_DÉFAUT = 600;
-	public static final Color COULEUR_FOND_PAR_DÉFAUT = Color.white;
-	public static final Color COULEUR_LIGNE_PAR_DÉFAUT = Color.black;
+	public static final int LARGEUR_PAR_DÃ‰FAUT = 800;
+	public static final int HAUTEUR_PAR_DÃ‰FAUT = 600;
+	public static final Color COULEUR_FOND_PAR_DÃ‰FAUT = Color.white;
+	public static final Color COULEUR_LIGNE_PAR_DÃ‰FAUT = Color.black;
 	public static final VueForme VUE_TEMP = new VueLigne(new Ligne(-1, -1), Color.black);
 	
 	// Attributs
-	private FenêtreBeAnArtist fenêtre;
+	private FenÃªtreBeAnArtist fenÃªtre;
 	private List<VueForme> vueFormes;
 	private VueForme vueTemp;
 	private Outil outilCourant;
@@ -39,13 +39,13 @@ public class PanneauDessin extends JPanel{
 	public PanneauDessin(int youpi, int youpa, Color coul){
 	}
 	
-	public PanneauDessin(Color couleurFond, Color couleurForme, FenêtreBeAnArtist fen){
-		this(LARGEUR_PAR_DÉFAUT, HAUTEUR_PAR_DÉFAUT, couleurFond, couleurForme, fen);
+	public PanneauDessin(Color couleurFond, Color couleurForme, FenÃªtreBeAnArtist fen){
+		this(LARGEUR_PAR_DÃ‰FAUT, HAUTEUR_PAR_DÃ‰FAUT, couleurFond, couleurForme, fen);
 	}
 	
 	
-	public PanneauDessin(int largeur, int hauteur, Color couleurFond, Color couleurForme, FenêtreBeAnArtist fen){
-		this.fenêtre = fen;
+	public PanneauDessin(int largeur, int hauteur, Color couleurFond, Color couleurForme, FenÃªtreBeAnArtist fen){
+		this.fenÃªtre = fen;
 		this.couleurForme = couleurForme;
 		this.couleurFond = couleurFond;
 		this.rempli = false;
@@ -58,7 +58,7 @@ public class PanneauDessin extends JPanel{
 		this.vueTemp = VUE_TEMP;
 	}
 
-	// Autres Méthodes
+	// Autres MÃ‰thodes
 	
 	public void ajouterVueForme(VueForme vue){
 		this.getVueFormes().add(vue);
@@ -90,12 +90,12 @@ public class PanneauDessin extends JPanel{
 	
 	// ACCESSEURS
 	
-	public FenêtreBeAnArtist getFenêtre(){
-		return this.fenêtre;
+	public FenÃªtreBeAnArtist getFenÃªre(){
+		return this.fenÃªtre;
 	}
 	
-	public void setFenêtre(FenêtreBeAnArtist fen){
-		this.fenêtre = fen;
+	public void setFenÃªre(FenÃªtreBeAnArtist fen){
+		this.fenÃªtre = fen;
 	}
 	
 	public List<VueForme> getVueFormes(){

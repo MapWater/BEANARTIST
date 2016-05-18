@@ -8,7 +8,7 @@ import fr.eseo.gpi.beanartist.modele.geom.Point;
 import java.awt.event.MouseEvent;
 
 /**
- * @author Clément
+ * @author Clï¿½ment
  *
  */
 public abstract class Outil
@@ -17,9 +17,9 @@ public abstract class Outil
 	
 	// ATTRIBUTS
 	private PanneauDessin panneauDessin;
-	private Point début;
+	private Point dÃ©but;
 	private Point fin;
-	private Point débutDessin;
+	private Point dÃ©butDessin;
 	private Point finDessin;
 	
 	// CONSTRUCTEURS
@@ -36,48 +36,48 @@ public abstract class Outil
 	public void associer(PanneauDessin panneauDessin){
 //		System.out.println(this.getPanneauDessin().getOutilCourant());
 		if (this.getPanneauDessin().getOutilCourant() != null){
-			this.libérer();
+			this.libÃ©rer();
 		}
 		this.getPanneauDessin().setOutilCourant(this);
 		this.getPanneauDessin().addMouseListener(this);
 		this.getPanneauDessin().addMouseMotionListener(this);
-//		System.out.println("Associé:!");
+//		System.out.println("Associï¿½:!");
 //		System.out.println(this.getPanneauDessin().getOutilCourant());
 	}
 	
-	private void libérer(){
-		System.out.println("libérer");
+	private void libÃ©rer(){
+		System.out.println("libÃ©rer");
 		this.getPanneauDessin().removeMouseListener(getPanneauDessin().getOutilCourant());
 		this.getPanneauDessin().removeMouseMotionListener(getPanneauDessin().getOutilCourant());
 		this.getPanneauDessin().setOutilCourant(null);
 	}
 	
-	public void setDébut(Point point){
-		this.début = point;
+	public void setDÃ©but(Point point){
+		this.dÃ©but = point;
 	}
 	
 	public void setFin(Point point){
 		this.fin = point;
 	}
 	
-	public Point getDébut(){
-		return this.début;
+	public Point getDÃ©but(){
+		return this.dÃ©but;
 	}
 	
 	public Point getFin(){
 		return this.fin;
 	}
 	
-	public void setDébutDessin(Point point){
-		this.débutDessin = point;
+	public void setDÃ©butDessin(Point point){
+		this.dÃ©butDessin = point;
 	}
 	
 	public void setFinDessin(Point point){
 		this.finDessin = point;
 	}
 	
-	public Point getDébutDessin(){
-		return this.débutDessin;
+	public Point getDÃ©butDessin(){
+		return this.dÃ©butDessin;
 	}
 	
 	public Point getFinDessin(){
@@ -85,7 +85,7 @@ public abstract class Outil
 	}
 	
 	public void mousePressed(MouseEvent event){
-		this.setDébut(new Point(event.getX(), event.getY()));
+		this.setDÃ©but(new Point(event.getX(), event.getY()));
 	}
 	
 	public void mouseClicked(MouseEvent event){

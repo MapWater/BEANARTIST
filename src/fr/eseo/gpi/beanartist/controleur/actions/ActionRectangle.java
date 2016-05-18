@@ -6,22 +6,22 @@ package fr.eseo.gpi.beanartist.controleur.actions;
 import java.awt.event.ActionEvent;
 
 import fr.eseo.gpi.beanartist.controleur.outils.OutilRectangle;
-import fr.eseo.gpi.beanartist.vue.ui.FenêtreBeAnArtist;
+import fr.eseo.gpi.beanartist.vue.ui.FenÃªtreBeAnArtist;
 //import fr.eseo.gpi.beanartist.vue.ui.FenetreBeAnArtist;
 
 /**
- * @author Clément
+ * @author Clï¿½ment
  *
  */
 public class ActionRectangle extends javax.swing.AbstractAction{
 	// CONSTANTES
 	
 	// ATTRIBUTS
-	FenêtreBeAnArtist fenetre;
+	FenÃªtreBeAnArtist fenetre;
 	
 	
 	// CONSTRUCTEURS
-	public ActionRectangle(FenêtreBeAnArtist fen){
+	public ActionRectangle(FenÃªtreBeAnArtist fen){
 		this.fenetre = fen;
 //		System.out.println(fen);
 	}
@@ -30,16 +30,16 @@ public class ActionRectangle extends javax.swing.AbstractAction{
 	public void actionPerformed(ActionEvent e) {
 //		System.out.println("ET C'EST LE GG!");
 //		System.out.println(this.getFenetre());
-//		this.getFenetre().getPanneauDessin().getOutilCourant().libérer();
+//		this.getFenetre().getPanneauDessin().getOutilCourant().libï¿½rer();
 		OutilRectangle outil = new OutilRectangle(this.fenetre.getPanneauDessin());
 	}
 	
 	// ACCESSEURS
-	public void setFenetre(FenêtreBeAnArtist fen){
+	public void setFenetre(FenÃªtreBeAnArtist fen){
 		this.fenetre = fen;
 	}
 	
-	public FenêtreBeAnArtist getFenetre(){
+	public FenÃªtreBeAnArtist getFenetre(){
 		return this.fenetre;
 	}
 

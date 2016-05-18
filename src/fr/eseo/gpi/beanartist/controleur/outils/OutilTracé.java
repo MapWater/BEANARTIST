@@ -5,23 +5,23 @@ package fr.eseo.gpi.beanartist.controleur.outils;
 
 import fr.eseo.gpi.beanartist.vue.geom.VueForme;
 import fr.eseo.gpi.beanartist.vue.geom.VueLigne;
-import fr.eseo.gpi.beanartist.vue.geom.VueTracé;
+import fr.eseo.gpi.beanartist.vue.geom.VueTracÃ©;
 import fr.eseo.gpi.beanartist.vue.ui.PanneauDessin;
 import fr.eseo.gpi.beanartist.modele.geom.Ligne;
 import fr.eseo.gpi.beanartist.modele.geom.Point;
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
-import fr.eseo.gpi.beanartist.modele.geom.Tracé;
+import fr.eseo.gpi.beanartist.modele.geom.TracÃ©;
 import fr.eseo.gpi.beanartist.modele.geom.Ligne;
 
 
 
 /**
- * @author Clément
+ * @author Clï¿½ment
  *
  */
-public class OutilTracé extends OutilForme {
+public class OutilTracÃ© extends OutilForme {
 
 	// CONSTANTE
 	public static final double EPSILLON = 0.0000001;
@@ -31,11 +31,11 @@ public class OutilTracé extends OutilForme {
 	private double oldCoef;
 	private boolean newInfini;
 	private boolean oldInfini;
-	private Tracé tracé;
+	private TracÃ© tracÃ©;
 	
 	// METHODES
 	
-	public OutilTracé() {
+	public OutilTracÃ©() {
 		super();
 		// TODO Auto-generated constructor stub
 	}	
@@ -44,7 +44,7 @@ public class OutilTracé extends OutilForme {
 	/**
 	 * @param panneauDessin
 	 */
-	public OutilTracé(PanneauDessin panneauDessin) {
+	public OutilTracÃ©(PanneauDessin panneauDessin) {
 		super(panneauDessin);
 		
 		// TODO Auto-generated constructor stub
@@ -52,22 +52,22 @@ public class OutilTracé extends OutilForme {
 
 	
 	/* (non-Javadoc)
-	 * @see fr.eseo.gpi.beanartist.controleur.outils.OutilForme#créerVueForme()
+	 * @see fr.eseo.gpi.beanartist.controleur.outils.OutilForme#crï¿½erVueForme()
 	 */
-	@Override
-	protected VueForme créerVueForme() {
-		VueTracé vueTracé = new VueTracé(this.getTracé(), this.getPanneauDessin().getCouleurForme());
-		return vueTracé;
+//	@Override
+	protected VueForme crÃ©erVueForme() {
+		VueTracÃ© vueTracÃ© = new VueTracÃ©(this.getTracÃ©(), this.getPanneauDessin().getCouleurForme());
+		return vueTracÃ©;
 	}
 	
 	public void mousePressed(MouseEvent event){
-		this.setDébut(new Point(event.getX(), event.getY()));
-		this.setTracé(new Tracé(this.getDébut(), this.getDébut()));
+		this.setDÃ©but(new Point(event.getX(), event.getY()));
+		this.setTracÃ©(new TracÃ©(this.getDÃ©but(), this.getDÃ©but()));
 	}
 	
 	public void mouseReleased(MouseEvent event){
 		PanneauDessin pan = this.getPanneauDessin();
-		pan.ajouterVueForme(this.créerVueForme());
+		pan.ajouterVueForme(this.crÃ©erVueForme());
 		this.getPanneauDessin().setVueTemp(PanneauDessin.VUE_TEMP);
 		this.getPanneauDessin().repaint();
 	}
@@ -79,21 +79,21 @@ public class OutilTracé extends OutilForme {
 	public void mouseDragged(MouseEvent event){
 		PanneauDessin pan = this.getPanneauDessin();
 		Point finAux = new Point(event.getX(), event.getY());
-		this.getTracé().ajouterLigneVers(finAux);
-		this.setDébut(finAux);		
+		this.getTracÃ©().ajouterLigneVers(finAux);
+		this.setDÃ©but(finAux);		
 
-		pan.setVueTemp(this.créerVueForme());
+		pan.setVueTemp(this.crÃ©erVueForme());
 		this.getPanneauDessin().repaint();
 	}
 	
 	// ACCESSEURS
 	
-	public void setTracé(Tracé t){
-		this.tracé = t;
+	public void setTracÃ©(TracÃ© t){
+		this.tracÃ© = t;
 	}
 	
-	public Tracé getTracé(){
-		return this.tracé;
+	public TracÃ© getTracÃ©(){
+		return this.tracÃ©;
 	}
 
 }

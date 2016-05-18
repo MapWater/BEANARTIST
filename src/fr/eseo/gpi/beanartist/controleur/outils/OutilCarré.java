@@ -4,10 +4,8 @@
 package fr.eseo.gpi.beanartist.controleur.outils;
 
 import fr.eseo.gpi.beanartist.vue.geom.VueForme;
-import fr.eseo.gpi.beanartist.vue.geom.VueCarré;
-import fr.eseo.gpi.beanartist.vue.geom.VueCarré;
-import fr.eseo.gpi.beanartist.modele.geom.Carré;
-import fr.eseo.gpi.beanartist.modele.geom.Carré;
+import fr.eseo.gpi.beanartist.vue.geom.VueCarrÃ©;
+import fr.eseo.gpi.beanartist.modele.geom.CarrÃ©;
 import fr.eseo.gpi.beanartist.modele.geom.Point;
 import fr.eseo.gpi.beanartist.vue.ui.PanneauDessin;
 
@@ -18,12 +16,12 @@ import java.awt.event.MouseEvent;
 
 
 /**
- * @author Clément
+ * @author Clï¿½ment
  *
  */
-public class OutilCarré extends OutilForme {
+public class OutilCarrÃ© extends OutilForme {
 
-	public OutilCarré() {
+	public OutilCarrÃ©() {
 		super();
 		// TODO Auto-generated constructor stub
 	}	
@@ -32,39 +30,39 @@ public class OutilCarré extends OutilForme {
 	/**
 	 * @param panneauDessin
 	 */
-	public OutilCarré(PanneauDessin panneauDessin) {
+	public OutilCarrÃ©(PanneauDessin panneauDessin) {
 		super(panneauDessin);
 		// TODO Auto-generated constructor stub
 	}
 
 	
 	/* (non-Javadoc)
-	 * @see fr.eseo.gpi.beanartist.controleur.outils.OutilForme#créerVueForme()
+	 * @see fr.eseo.gpi.beanartist.controleur.outils.OutilForme#crÃ©erVueForme()
 	 */
-	@Override
-	protected VueForme créerVueForme() {
-		int x1 = super.getDébut().getX();
+	//@Override
+	protected VueForme crÃ©erVueForme() {
+		int x1 = super.getDÃ©but().getX();
 		int x2 = super.getFin().getX();
-		int y1 = super.getDébut().getY();
+		int y1 = super.getDÃ©but().getY();
 		int y2 = super.getFin().getY();
 		
 		int largeur = Math.max(Math.abs(x2-x1),Math.abs(y2-y1));
 
-		VueCarré retour;
+		VueCarrÃ© retour;
 		
 		if(x1 < x2 && y1 < y2){
-			return new VueCarré(new Carré(x1,y1,largeur),this.getPanneauDessin().getCouleurForme(),this.getPanneauDessin().estModeRemplissage());
+			return new VueCarrÃ©(new CarrÃ©(x1,y1,largeur),this.getPanneauDessin().getCouleurForme(),this.getPanneauDessin().estModeRemplissage());
 		}
 		else if(x1 < x2 && y1 > y2){
-			return new VueCarré(new Carré(x1,y1-largeur,largeur),this.getPanneauDessin().getCouleurForme(),this.getPanneauDessin().estModeRemplissage());
+			return new VueCarrÃ©(new CarrÃ©(x1,y1-largeur,largeur),this.getPanneauDessin().getCouleurForme(),this.getPanneauDessin().estModeRemplissage());
 		}
 		else if(x1 > x2 && y1 < y2){
-			return new VueCarré(new Carré(x1-largeur,y1,largeur),this.getPanneauDessin().getCouleurForme(),this.getPanneauDessin().estModeRemplissage());
+			return new VueCarrÃ©(new CarrÃ©(x1-largeur,y1,largeur),this.getPanneauDessin().getCouleurForme(),this.getPanneauDessin().estModeRemplissage());
 		}
 		else if(x1 > x2 && y1 > y2){
-			return new VueCarré(new Carré(x1-largeur,y1-largeur,largeur),this.getPanneauDessin().getCouleurForme(),this.getPanneauDessin().estModeRemplissage());
+			return new VueCarrÃ©(new CarrÃ©(x1-largeur,y1-largeur,largeur),this.getPanneauDessin().getCouleurForme(),this.getPanneauDessin().estModeRemplissage());
 		}else{
-			retour = new VueCarré(new Carré(0,0,0),false);
+			retour = new VueCarrÃ©(new CarrÃ©(0,0,0),false);
 		}
 		return retour;
 	
@@ -73,7 +71,7 @@ public class OutilCarré extends OutilForme {
 	public void mouseReleased(MouseEvent event){
 		PanneauDessin pan = this.getPanneauDessin();
 		this.setFin(new Point(event.getX(),event.getY()));
-		pan.ajouterVueForme(this.créerVueForme());
+		pan.ajouterVueForme(this.crÃ©erVueForme());
 
 		this.getPanneauDessin().setVueTemp(PanneauDessin.VUE_TEMP);
 		this.getPanneauDessin().repaint();
@@ -82,7 +80,7 @@ public class OutilCarré extends OutilForme {
 	public void mouseDragged(MouseEvent event){
 		this.setFin(new Point(event.getX(),event.getY()));
 		PanneauDessin pan = this.getPanneauDessin();				
-		pan.setVueTemp(this.créerVueForme());
+		pan.setVueTemp(this.crÃ©erVueForme());
 		this.getPanneauDessin().repaint();
 	}
 

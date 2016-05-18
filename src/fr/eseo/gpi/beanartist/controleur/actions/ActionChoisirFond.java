@@ -12,7 +12,7 @@ public class ActionChoisirFond extends AbstractAction {
 	public static final String CHOISIR_FOND = " Choisir couleur fond";
 	private PanneauDessin panneauDessin;
 
-	public ActionChoisirFond(FenêtreBeAnArtist fen){
+	public ActionChoisirFond(FenÃªtreBeAnArtist fen){
 		super(CHOISIR_FOND);
 		this.panneauDessin = fen.getPanneauDessin();
 	}

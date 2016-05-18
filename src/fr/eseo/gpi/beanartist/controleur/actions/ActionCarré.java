@@ -5,23 +5,23 @@ package fr.eseo.gpi.beanartist.controleur.actions;
 
 import java.awt.event.ActionEvent;
 
-import fr.eseo.gpi.beanartist.controleur.outils.OutilCarré;
-import fr.eseo.gpi.beanartist.vue.ui.FenêtreBeAnArtist;
+import fr.eseo.gpi.beanartist.controleur.outils.OutilCarrÃ©;
+import fr.eseo.gpi.beanartist.vue.ui.FenÃªtreBeAnArtist;
 //import fr.eseo.gpi.beanartist.vue.ui.FenetreBeAnArtist;
 
 /**
- * @author Clément
+ * @author Clï¿½ment
  *
  */
-public class ActionCarré extends javax.swing.AbstractAction{
+public class ActionCarrÃ© extends javax.swing.AbstractAction{
 	// CONSTANTES
 	
 	// ATTRIBUTS
-	FenêtreBeAnArtist fenetre;
+	FenÃªtreBeAnArtist fenetre;
 	
 	
 	// CONSTRUCTEURS
-	public ActionCarré(FenêtreBeAnArtist fen){
+	public ActionCarrÃ©(FenÃªtreBeAnArtist fen){
 		this.fenetre = fen;
 //		System.out.println(fen);
 	}
@@ -30,16 +30,16 @@ public class ActionCarré extends javax.swing.AbstractAction{
 	public void actionPerformed(ActionEvent e) {
 //		System.out.println("ET C'EST LE GG!");
 //		System.out.println(this.getFenetre());
-//		this.getFenetre().getPanneauDessin().getOutilCourant().libérer();
-		OutilCarré outil = new OutilCarré(this.fenetre.getPanneauDessin());
+//		this.getFenetre().getPanneauDessin().getOutilCourant().libï¿½rer();
+		OutilCarrÃ© outil = new OutilCarrÃ©(this.fenetre.getPanneauDessin());
 	}
 	
 	// ACCESSEURS
-	public void setFenetre(FenêtreBeAnArtist fen){
+	public void setFenetre(FenÃªtreBeAnArtist fen){
 		this.fenetre = fen;
 	}
 	
-	public FenêtreBeAnArtist getFenetre(){
+	public FenÃªtreBeAnArtist getFenetre(){
 		return this.fenetre;
 	}
 

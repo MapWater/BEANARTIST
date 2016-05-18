@@ -7,16 +7,16 @@ import fr.eseo.gpi.beanartist.vue.ui.*;
 public class OutilsTest {
 
 	public static void main(String[] args) {
-		// Créer fenêtre à fond Jaune
-		FenêtreBeAnArtist fen1 = new FenêtreBeAnArtist("Fenêtre 1", 800, 600, Color.yellow);
-		// Changer la couleur courante de dessin du panneau d'édition à rouge
+		// CrÃªer fenÃªtre Ãª fond Jaune
+		FenÃªtreBeAnArtist fen1 = new FenÃªtreBeAnArtist("FenÃªtre 1", 800, 600, Color.yellow);
+		// Changer la couleur courante de dessin du panneau d'Ãªdition Ãª rouge
 		fen1.getPanneauDessin().setCouleurForme(Color.red);
-		// Créer un contrôleur, instance de la classe OutilLigne
+		// CrÃªer un contrÃªleur, instance de la classe OutilLigne
 		OutilLigne outil = new OutilLigne(fen1.getPanneauDessin());
-		// Associer cette instance au panneau d'édition
+		// Associer cette instance au panneau d'Ãªdition
 		outil.associer(fen1.getPanneauDessin());
 		System.out.println(outil.getPanneauDessin().toString());
-		// Afficher la fenêtre
+		// Afficher la fenÃªtre
 		
 	}
 

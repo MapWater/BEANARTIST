@@ -8,14 +8,14 @@ import fr.eseo.gpi.beanartist.modele.geom.Forme;
 import fr.eseo.gpi.beanartist.modele.geom.Rectangle;
 
 /**
- * @author Clément
+ * @author ClÃ©ment
  *
  */
 public abstract class VueForme {
 	
 	// CONSTANTES DE CLASSE
-	public static final Color COULEUR_LIGNE_PAR_DÉFAUT = Color.black;
-	public static final Rectangle FORME_PAR_DÉFAUT = new Rectangle();
+	public static final Color COULEUR_LIGNE_PAR_DÃ‰FAUT = Color.black;
+	public static final Rectangle FORME_PAR_DÃ‰FAUT = new Rectangle();
 	
 	// ATTRIBUTS
 	protected Forme forme;
@@ -27,11 +27,11 @@ public abstract class VueForme {
 	// CONSTRUCTEURS
 	
 	public VueForme(){
-		this(FORME_PAR_DÉFAUT, COULEUR_LIGNE_PAR_DÉFAUT, false);
+		this(FORME_PAR_DÃ‰FAUT, COULEUR_LIGNE_PAR_DÃ‰FAUT, false);
 	}
 	
 	public VueForme(Forme forme, boolean rempli){
-		this(forme, COULEUR_LIGNE_PAR_DÉFAUT, rempli);
+		this(forme, COULEUR_LIGNE_PAR_DÃ‰FAUT, rempli);
 	}
 	
 	public VueForme(Forme forme, Color couleurLigne, boolean rempli){

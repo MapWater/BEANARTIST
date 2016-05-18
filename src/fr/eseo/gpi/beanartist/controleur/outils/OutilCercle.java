@@ -16,7 +16,7 @@ import java.awt.event.MouseEvent;
 
 
 /**
- * @author Clément
+ * @author Clï¿½ment
  *
  */
 public class OutilCercle extends OutilForme {
@@ -37,13 +37,13 @@ public class OutilCercle extends OutilForme {
 
 	
 	/* (non-Javadoc)
-	 * @see fr.eseo.gpi.beanartist.controleur.outils.OutilForme#créerVueForme()
+	 * @see fr.eseo.gpi.beanartist.controleur.outils.OutilForme#crÃ©erVueForme()
 	 */
 	@Override
-	protected VueForme créerVueForme() {
-		int x1 = super.getDébut().getX();
+	protected VueForme crÃ©erVueForme() {
+		int x1 = super.getDÃ©but().getX();
 		int x2 = super.getFin().getX();
-		int y1 = super.getDébut().getY();
+		int y1 = super.getDÃ©but().getY();
 		int y2 = super.getFin().getY();
 		
 		int largeur = Math.max(Math.abs(x2-x1),Math.abs(y2-y1));
@@ -71,7 +71,7 @@ public class OutilCercle extends OutilForme {
 	public void mouseReleased(MouseEvent event){
 		PanneauDessin pan = this.getPanneauDessin();
 		this.setFin(new Point(event.getX(),event.getY()));
-		pan.ajouterVueForme(this.créerVueForme());
+		pan.ajouterVueForme(this.crÃ©erVueForme());
 
 		this.getPanneauDessin().setVueTemp(PanneauDessin.VUE_TEMP);
 		this.getPanneauDessin().repaint();
@@ -80,7 +80,7 @@ public class OutilCercle extends OutilForme {
 	public void mouseDragged(MouseEvent event){
 		this.setFin(new Point(event.getX(),event.getY()));
 		PanneauDessin pan = this.getPanneauDessin();				
-		pan.setVueTemp(this.créerVueForme());
+		pan.setVueTemp(this.crÃ©erVueForme());
 		this.getPanneauDessin().repaint();
 	}
 	

@@ -2,22 +2,22 @@ package fr.eseo.gpi.beanartist.controleur.actions;
 
 import java.awt.event.ActionEvent;
 
-import fr.eseo.gpi.beanartist.vue.ui.FenêtreBeAnArtist;
+import fr.eseo.gpi.beanartist.vue.ui.FenÃªtreBeAnArtist;
 
 public abstract class ActionForme extends javax.swing.AbstractAction{
 	// CONSTANTES
-	public static final String NOM_ACTION_ELLIPSE = "Ellipse";
-	public static final String NOM_ACTION_LIGNE = "Ligne";
-	public static final String NOM_ACTION_RECTANGLE = "Rectangle";
-	public static final String NOM_ACTION_CARRÉ = "Carré";
-	public static final String NOM_ACTION_CERCLE = "Cercle";
-	public static final String NOM_ACTION_TRACÉ = "Tracé";
+//	public static final String NOM_ACTION_ELLIPSE = "Ellipse";
+//	public static final String NOM_ACTION_LIGNE = "Ligne";
+//	public static final String NOM_ACTION_RECTANGLE = "Rectangle";
+//	public static final String NOM_ACTION_CARRï¿½ = "Carrï¿½";
+//	public static final String NOM_ACTION_CERCLE = "Cercle";
+//	public static final String NOM_ACTION_TRACï¿½ = "Tracï¿½";
 	
 	// ATTRIBUTS
-	private FenêtreBeAnArtist fenêtre;
+	private FenÃªtreBeAnArtist fenÃªtre;
 	
-	public ActionForme(FenêtreBeAnArtist fen){
-		this.fenêtre = fen;
+	public ActionForme(FenÃªtreBeAnArtist fen){
+		this.fenÃªtre = fen;
 	}
 	
 	@Override

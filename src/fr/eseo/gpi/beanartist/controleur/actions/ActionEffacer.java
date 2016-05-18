@@ -4,11 +4,11 @@
 package fr.eseo.gpi.beanartist.controleur.actions;
 
 import java.awt.event.ActionEvent;
-import fr.eseo.gpi.beanartist.vue.ui.FenêtreBeAnArtist;
+import fr.eseo.gpi.beanartist.vue.ui.FenÃªtreBeAnArtist;
 //import fr.eseo.gpi.beanartist.vue.ui.FenetreBeAnArtist;
 
 /**
- * @author Clément
+ * @author Clï¿½ment
  *
  */
 public class ActionEffacer extends javax.swing.AbstractAction{
@@ -16,11 +16,11 @@ public class ActionEffacer extends javax.swing.AbstractAction{
 	public static final String NOM_ACTION = "Effacer";
 	
 	// ATTRIBUTS
-	FenêtreBeAnArtist fenetre;
+	FenÃªtreBeAnArtist fenetre;
 	
 	
 	// CONSTRUCTEURS
-	public ActionEffacer(FenêtreBeAnArtist fen){
+	public ActionEffacer(FenÃªtreBeAnArtist fen){
 		this.fenetre = fen;
 //		System.out.println(fen);
 	}
@@ -34,11 +34,11 @@ public class ActionEffacer extends javax.swing.AbstractAction{
 	}
 	
 	// ACCESSEURS
-	public void setFenetre(FenêtreBeAnArtist fen){
+	public void setFenetre(FenÃªtreBeAnArtist fen){
 		this.fenetre = fen;
 	}
 	
-	public FenêtreBeAnArtist getFenetre(){
+	public FenÃªtreBeAnArtist getFenetre(){
 		return this.fenetre;
 	}
 

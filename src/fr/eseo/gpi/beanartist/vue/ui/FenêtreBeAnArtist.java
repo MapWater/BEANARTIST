@@ -9,12 +9,12 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 
-public class FenêtreBeAnArtist extends JFrame{
+public class FenÃªtreBeAnArtist extends JFrame{
 	// Constantes
-	public static final int LARGEUR_PAR_DÉFAUT = 800;
-	public static final int HAUTEUR_PAR_DÉFAUT = 600;
-	public static final String TITRE_PAR_DÉFAUT = "BeAnArtist";
-	public static final Color COULEUR_FOND_PAR_DÉFAUT = Color.white;
+	public static final int LARGEUR_PAR_DÃ‰FAUT = 800;
+	public static final int HAUTEUR_PAR_DÃ‰FAUT = 600;
+	public static final String TITRE_PAR_DÃ‰FAUT = "BeAnArtist";
+	public static final Color COULEUR_FOND_PAR_DÃ‰FAUT = Color.white;
 	// Attributs
 	private PanneauDessin panneauDessin;
 	private PanneauBarreOutil panneauBarreOutil;
@@ -22,23 +22,23 @@ public class FenêtreBeAnArtist extends JFrame{
 	private JPanel windowPan;
 	
 	// Constructeurs
-	public FenêtreBeAnArtist(){
-		this(TITRE_PAR_DÉFAUT, LARGEUR_PAR_DÉFAUT, HAUTEUR_PAR_DÉFAUT, COULEUR_FOND_PAR_DÉFAUT);
+	public FenÃªtreBeAnArtist(){
+		this(TITRE_PAR_DÃ‰FAUT, LARGEUR_PAR_DÃ‰FAUT, HAUTEUR_PAR_DÃ‰FAUT, COULEUR_FOND_PAR_DÃ‰FAUT);
 	}
 
-	public FenêtreBeAnArtist(String titre){
-		this("titre", LARGEUR_PAR_DÉFAUT, HAUTEUR_PAR_DÉFAUT, COULEUR_FOND_PAR_DÉFAUT);
+	public FenÃªtreBeAnArtist(String titre){
+		this("titre", LARGEUR_PAR_DÃ‰FAUT, HAUTEUR_PAR_DÃ‰FAUT, COULEUR_FOND_PAR_DÃ‰FAUT);
 	}
 
-	public FenêtreBeAnArtist(int largeur, int hauteur){
-		this(TITRE_PAR_DÉFAUT, largeur, hauteur, COULEUR_FOND_PAR_DÉFAUT);
+	public FenÃªtreBeAnArtist(int largeur, int hauteur){
+		this(TITRE_PAR_DÃ‰FAUT, largeur, hauteur, COULEUR_FOND_PAR_DÃ‰FAUT);
 	}
 
-	public FenêtreBeAnArtist(String titre, int largeur, int hauteur){
-		this(titre, largeur, hauteur, COULEUR_FOND_PAR_DÉFAUT);
+	public FenÃªtreBeAnArtist(String titre, int largeur, int hauteur){
+		this(titre, largeur, hauteur, COULEUR_FOND_PAR_DÃ‰FAUT);
 	}
 	
-	public FenêtreBeAnArtist(String titre, int largeur, int hauteur, Color couleurFond){
+	public FenÃªtreBeAnArtist(String titre, int largeur, int hauteur, Color couleurFond){
 		// Infos Basiques
 		this.setTitle(titre);
 		this.setSize(largeur, hauteur);
@@ -69,14 +69,14 @@ public class FenêtreBeAnArtist extends JFrame{
 	}
 	
 
-	// Autres Méthodes
+	// Autres MÃ‰thodes
 	
 //	private void associerPanneauDessin(){
 //		this.associerPanneauDessin(this.getLargeur(), hauteur, Color.white);
 //	}
 	
 	private void associerPanneauDessin(Color couleurFond){
-		this.panneauDessin = new PanneauDessin(couleurFond, PanneauDessin.COULEUR_LIGNE_PAR_DÉFAUT, this);
+		this.panneauDessin = new PanneauDessin(couleurFond, PanneauDessin.COULEUR_LIGNE_PAR_DÃ‰FAUT, this);
 		this.panneauDessin.setLayout( new BorderLayout() );
 	}
 	
@@ -85,7 +85,7 @@ public class FenêtreBeAnArtist extends JFrame{
 	}
 	
 	private void associerPanneauDessin(int largeur, int hauteur, Color couleurFond){
-		this.panneauDessin = new PanneauDessin(largeur, hauteur, couleurFond, PanneauDessin.COULEUR_LIGNE_PAR_DÉFAUT, this);
+		this.panneauDessin = new PanneauDessin(largeur, hauteur, couleurFond, PanneauDessin.COULEUR_LIGNE_PAR_DÃ‰FAUT, this);
 		this.panneauDessin.setLayout( new BorderLayout() );
 	}
 	

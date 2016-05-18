@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 import fr.eseo.gpi.beanartist.controleur.outils.OutilChoisirCouleur;
-import fr.eseo.gpi.beanartist.vue.ui.FenêtreBeAnArtist;
+import fr.eseo.gpi.beanartist.vue.ui.FenÃªtreBeAnArtist;
 import fr.eseo.gpi.beanartist.vue.ui.PanneauDessin;
 
 public class ActionChoisirCouleur extends AbstractAction {
@@ -17,7 +17,7 @@ public class ActionChoisirCouleur extends AbstractAction {
 		//LOLELOLELOLELOLEOLEOLEOLOL
 	}
 	
-	public ActionChoisirCouleur (FenêtreBeAnArtist fen){
+	public ActionChoisirCouleur (FenÃªtreBeAnArtist fen){
 		super(CHOISIR_COULEUR);
 		this.panneauDessin = fen.getPanneauDessin();
 	}

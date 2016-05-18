@@ -15,7 +15,7 @@ import java.awt.event.MouseEvent;
 
 
 /**
- * @author Clément
+ * @author Clï¿½ment
  *
  */
 public class OutilLigne extends OutilForme {
@@ -35,8 +35,8 @@ public class OutilLigne extends OutilForme {
 	}
 
 	public void mousePressed(MouseEvent event){
-		this.setDébut(new Point(event.getX(), event.getY()));
-//		System.out.println("Clické!");
+		this.setDÃ©but(new Point(event.getX(), event.getY()));
+//		System.out.println("Clickï¿½!");
 	}
 	
 	public void mouseClicked(MouseEvent event){
@@ -45,13 +45,13 @@ public class OutilLigne extends OutilForme {
 	
 	public void mouseReleased(MouseEvent event){
 		PanneauDessin pan = this.getPanneauDessin();
-		// Détection cas Abscisse/Ordonnée négative :
-		Point débutAux = new Point(this.getDébut());
+		// Dï¿½tection cas Abscisse/Ordonnï¿½e nï¿½gative :
+		Point dÃ©butAux = new Point(this.getDÃ©but());
 		Point finAux = new Point(event.getX(), event.getY());
-		this.setDébutDessin(débutAux);
+		this.setDÃ©butDessin(dÃ©butAux);
 		this.setFinDessin(finAux);
-		pan.ajouterVueForme(this.créerVueForme());
-//		System.out.println("Relaché!");
+		pan.ajouterVueForme(this.crÃ©erVueForme());
+//		System.out.println("Relachï¿½!");
 //		System.out.println(pan.getVueFormes().get(0).toString());
 		this.getPanneauDessin().setVueTemp(PanneauDessin.VUE_TEMP);
 		this.getPanneauDessin().repaint();
@@ -60,21 +60,21 @@ public class OutilLigne extends OutilForme {
 	public void mouseDragged(MouseEvent event){
 //		System.out.println("Dragged");
 		PanneauDessin pan = this.getPanneauDessin();
-		Point débutAux = new Point(this.getDébut());
+		Point dÃ©butAux = new Point(this.getDÃ©but());
 		Point finAux = new Point(event.getX(), event.getY());
-		this.setDébutDessin(débutAux);
+		this.setDÃ©butDessin(dÃ©butAux);
 		this.setFinDessin(finAux);
-		pan.setVueTemp(this.créerVueForme());
+		pan.setVueTemp(this.crÃ©erVueForme());
 		this.getPanneauDessin().repaint();
 	}
 	
 	
 	/* (non-Javadoc)
-	 * @see fr.eseo.gpi.beanartist.controleur.outils.OutilForme#créerVueForme()
+	 * @see fr.eseo.gpi.beanartist.controleur.outils.OutilForme#crï¿½erVueForme()
 	 */
 	@Override
-	protected VueForme créerVueForme() {
-		Ligne ligne = new Ligne(this.getDébutDessin(), this.getFinDessin());
+	protected VueForme crÃ©erVueForme() {
+		Ligne ligne = new Ligne(this.getDÃ©butDessin(), this.getFinDessin());
 //		VueLigne vueLigne = new VueLigne(ligne, couleurLigne);
 		VueLigne vueLigne = new VueLigne(ligne, this.getPanneauDessin().getCouleurForme());
 		return vueLigne;

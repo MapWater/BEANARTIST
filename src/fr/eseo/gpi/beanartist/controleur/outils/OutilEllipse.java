@@ -14,7 +14,7 @@ import java.awt.Color;
 
 
 /**
- * @author Clément
+ * @author Clï¿½ment
  *
  */
 public class OutilEllipse extends OutilForme {
@@ -35,11 +35,11 @@ public class OutilEllipse extends OutilForme {
 
 	
 	/* (non-Javadoc)
-	 * @see fr.eseo.gpi.beanartist.controleur.outils.OutilForme#créerVueForme()
+	 * @see fr.eseo.gpi.beanartist.controleur.outils.OutilForme#crï¿½erVueForme()
 	 */
 	@Override
-	protected VueForme créerVueForme() {
-		Ellipse forme = new Ellipse(this.getDébutDessin(), this.getFinDessin().getX()-this.getDébutDessin().getX(), this.getFinDessin().getY()-this.getDébutDessin().getY());
+	protected VueForme crÃ©erVueForme() {
+		Ellipse forme = new Ellipse(this.getDÃ©butDessin(), this.getFinDessin().getX()-this.getDÃ©butDessin().getX(), this.getFinDessin().getY()-this.getDÃ©butDessin().getY());
 		VueEllipse vue = new VueEllipse(forme, this.getPanneauDessin().getCouleurForme(), this.getPanneauDessin().estModeRemplissage());
 		return vue;
 	}

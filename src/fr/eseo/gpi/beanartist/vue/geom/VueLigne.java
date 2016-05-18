@@ -9,7 +9,7 @@ import java.awt.geom.Line2D;
 import fr.eseo.gpi.beanartist.modele.geom.Ligne;
 
 /**
- * @author Clément
+ * @author Clï¿½ment
  *
  */
 public class VueLigne extends VueForme{
@@ -21,7 +21,7 @@ public class VueLigne extends VueForme{
 	}
 	
 	public VueLigne(Ligne ligne){
-		super(ligne, VueForme.COULEUR_LIGNE_PAR_DÉFAUT, true);
+		super(ligne, VueForme.COULEUR_LIGNE_PAR_DÃ‰FAUT, true);
 	}
 	
 	public VueLigne(Ligne ligne, Color couleurLigne){

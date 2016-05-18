@@ -2,21 +2,21 @@ package fr.eseo.gpi.beanartist.vue.geom;
 
 import java.awt.Color;
 
-import fr.eseo.gpi.beanartist.modele.geom.Carré;
+import fr.eseo.gpi.beanartist.modele.geom.CarrÃ©;
 
-public class VueCarré extends VueRectangle {
+public class VueCarrÃ© extends VueRectangle {
 
-	public VueCarré() {
+	public VueCarrÃ©() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public VueCarré(Carré carré, boolean rempli) {
-		super(carré, rempli);
+	public VueCarrÃ©(CarrÃ© carrÃ©, boolean rempli) {
+		super(carrÃ©, rempli);
 		// TODO Auto-generated constructor stub
 	}
 
-	public VueCarré(Carré carré, Color couleurLigne, boolean rempli) {
-		super(carré, couleurLigne, rempli);
+	public VueCarrÃ©(CarrÃ© carrÃ©, Color couleurLigne, boolean rempli) {
+		super(carrÃ©, couleurLigne, rempli);
 		// TODO Auto-generated constructor stub
 	}
 

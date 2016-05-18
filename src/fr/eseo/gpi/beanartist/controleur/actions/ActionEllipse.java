@@ -6,20 +6,20 @@ package fr.eseo.gpi.beanartist.controleur.actions;
 import java.awt.event.ActionEvent;
 
 import fr.eseo.gpi.beanartist.controleur.outils.OutilEllipse;
-import fr.eseo.gpi.beanartist.vue.ui.FenêtreBeAnArtist;
+import fr.eseo.gpi.beanartist.vue.ui.FenÃªtreBeAnArtist;
 
 /**
- * @author Clément
+ * @author Clï¿½ment
  *
  */
 public class ActionEllipse extends javax.swing.AbstractAction{
 	
 	// ATTRIBUTS
-	FenêtreBeAnArtist fenetre;
+	FenÃªtreBeAnArtist fenetre;
 	
 	
 	// CONSTRUCTEURS
-	public ActionEllipse(FenêtreBeAnArtist fen){
+	public ActionEllipse(FenÃªtreBeAnArtist fen){
 		this.fenetre = fen;
 //		System.out.println(fen);
 	}
@@ -33,11 +33,11 @@ public class ActionEllipse extends javax.swing.AbstractAction{
 	}
 	
 	// ACCESSEURS
-	public void setFenetre(FenêtreBeAnArtist fen){
+	public void setFenetre(FenÃªtreBeAnArtist fen){
 		this.fenetre = fen;
 	}
 	
-	public FenêtreBeAnArtist getFenetre(){
+	public FenÃªtreBeAnArtist getFenetre(){
 		return this.fenetre;
 	}
 

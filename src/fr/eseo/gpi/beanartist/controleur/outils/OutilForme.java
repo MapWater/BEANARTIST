@@ -13,7 +13,7 @@ import fr.eseo.gpi.beanartist.vue.geom.VueLigne;
 import fr.eseo.gpi.beanartist.vue.ui.PanneauDessin;
 
 /**
- * @author Clément
+ * @author Clï¿½ment
  *
  */
 public abstract class OutilForme extends Outil {
@@ -33,8 +33,8 @@ public abstract class OutilForme extends Outil {
 	}
 	
 	public void mousePressed(MouseEvent event){
-		this.setDébut(new Point(event.getX(), event.getY()));
-//		System.out.println("Clické!");
+		this.setDÃ©but(new Point(event.getX(), event.getY()));
+//		System.out.println("Clickï¿½!");
 	}
 	
 	public void mouseClicked(MouseEvent event){
@@ -43,27 +43,27 @@ public abstract class OutilForme extends Outil {
 	
 	public void mouseReleased(MouseEvent event){
 		PanneauDessin pan = this.getPanneauDessin();
-		// Détection cas Abscisse/Ordonnée négative :
-		Point débutAux = new Point(this.getDébut());
+		// Dï¿½tection cas Abscisse/Ordonnï¿½e nï¿½gative :
+		Point dÃ©butAux = new Point(this.getDÃ©but());
 		Point finAux = new Point(event.getX(), event.getY());
 		int aux;
 		// Cas Largeur < 0 :
-		if (finAux.getX() - débutAux.getX() < 0){
-			aux = débutAux.getX();
-			débutAux.setX(finAux.getX());
+		if (finAux.getX() - dÃ©butAux.getX() < 0){
+			aux = dÃ©butAux.getX();
+			dÃ©butAux.setX(finAux.getX());
 			finAux.setX(aux);
 		}
 		// Cas Hauteur < 0 :
-		if (finAux.getY() - débutAux.getY() < 0){
-			aux = débutAux.getY();
-			débutAux.setY(finAux.getY());
+		if (finAux.getY() - dÃ©butAux.getY() < 0){
+			aux = dÃ©butAux.getY();
+			dÃ©butAux.setY(finAux.getY());
 			finAux.setY(aux);
 		}
 		
-		this.setDébutDessin(débutAux);
+		this.setDÃ©butDessin(dÃ©butAux);
 		this.setFinDessin(finAux);
-		pan.ajouterVueForme(this.créerVueForme());
-//		System.out.println("Relaché!");
+		pan.ajouterVueForme(this.crÃ©erVueForme());
+//		System.out.println("Relachï¿½!");
 //		System.out.println(pan.getVueFormes().get(0).toString());
 		this.getPanneauDessin().setVueTemp(PanneauDessin.VUE_TEMP);
 		this.getPanneauDessin().repaint();
@@ -72,27 +72,27 @@ public abstract class OutilForme extends Outil {
 	public void mouseDragged(MouseEvent event){
 //		System.out.println("Dragged");
 		PanneauDessin pan = this.getPanneauDessin();
-		// Détection cas Abscisse/Ordonnée négative :
-		Point débutAux = new Point(this.getDébut());
+		// Dï¿½tection cas Abscisse/Ordonnï¿½e nï¿½gative :
+		Point dÃ©butAux = new Point(this.getDÃ©but());
 		Point finAux = new Point(event.getX(), event.getY());
 		int aux;
 		// Cas Largeur < 0 :
-		if (finAux.getX() - débutAux.getX() < 0){
-			aux = débutAux.getX();
-			débutAux.setX(finAux.getX());
+		if (finAux.getX() - dÃ©butAux.getX() < 0){
+			aux = dÃ©butAux.getX();
+			dÃ©butAux.setX(finAux.getX());
 			finAux.setX(aux);
 		}
 		// Cas Hauteur < 0 :
-		if (finAux.getY() - débutAux.getY() < 0){
-			aux = débutAux.getY();
-			débutAux.setY(finAux.getY());
+		if (finAux.getY() - dÃ©butAux.getY() < 0){
+			aux = dÃ©butAux.getY();
+			dÃ©butAux.setY(finAux.getY());
 			finAux.setY(aux);
 		}
-		this.setDébutDessin(débutAux);
+		this.setDÃ©butDessin(dÃ©butAux);
 		this.setFinDessin(finAux);
-		pan.setVueTemp(this.créerVueForme());
+		pan.setVueTemp(this.crÃ©erVueForme());
 		this.getPanneauDessin().repaint();
 	}
 	
-	protected abstract VueForme créerVueForme();
+	protected abstract VueForme crÃ©erVueForme();
 }
