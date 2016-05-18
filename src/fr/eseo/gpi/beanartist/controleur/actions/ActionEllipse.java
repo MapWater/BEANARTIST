@@ -13,8 +13,6 @@ import fr.eseo.gpi.beanartist.vue.ui.FenêtreBeAnArtist;
  *
  */
 public class ActionEllipse extends javax.swing.AbstractAction{
-	// CONSTANTES
-	public static final String NOM_ACTION = "Ellipse";
 	
 	// ATTRIBUTS
 	FenêtreBeAnArtist fenetre;

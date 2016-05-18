@@ -34,7 +34,6 @@ public class VueTracé extends VueForme{
 	public void affiche(Graphics2D g2d){
 		g2d.setColor(this.getCouleurLigne());		 
 		for(Ligne ligne : ((Tracé)this.getForme()).getLignes()){
-			System.out.println(ligne.toString());
 			(new VueLigne(ligne, this.getCouleurLigne())).affiche(g2d);
 		}
 	}

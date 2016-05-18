@@ -42,8 +42,26 @@ public abstract class OutilForme extends Outil {
 	} 
 	
 	public void mouseReleased(MouseEvent event){
-		PanneauDessin pan = this.getPanneauDessin(); 
-		this.setFin(new Point(event.getX(), event.getY()));
+		PanneauDessin pan = this.getPanneauDessin();
+		// Détection cas Abscisse/Ordonnée négative :
+		Point débutAux = new Point(this.getDébut());
+		Point finAux = new Point(event.getX(), event.getY());
+		int aux;
+		// Cas Largeur < 0 :
+		if (finAux.getX() - débutAux.getX() < 0){
+			aux = débutAux.getX();
+			débutAux.setX(finAux.getX());
+			finAux.setX(aux);
+		}
+		// Cas Hauteur < 0 :
+		if (finAux.getY() - débutAux.getY() < 0){
+			aux = débutAux.getY();
+			débutAux.setY(finAux.getY());
+			finAux.setY(aux);
+		}
+		
+		this.setDébutDessin(débutAux);
+		this.setFinDessin(finAux);
 		pan.ajouterVueForme(this.créerVueForme());
 //		System.out.println("Relaché!");
 //		System.out.println(pan.getVueFormes().get(0).toString());
@@ -54,8 +72,24 @@ public abstract class OutilForme extends Outil {
 	public void mouseDragged(MouseEvent event){
 //		System.out.println("Dragged");
 		PanneauDessin pan = this.getPanneauDessin();
-		this.setFin(new Point(event.getX(), event.getY()));
-//		System.out.println(this.getFin());
+		// Détection cas Abscisse/Ordonnée négative :
+		Point débutAux = new Point(this.getDébut());
+		Point finAux = new Point(event.getX(), event.getY());
+		int aux;
+		// Cas Largeur < 0 :
+		if (finAux.getX() - débutAux.getX() < 0){
+			aux = débutAux.getX();
+			débutAux.setX(finAux.getX());
+			finAux.setX(aux);
+		}
+		// Cas Hauteur < 0 :
+		if (finAux.getY() - débutAux.getY() < 0){
+			aux = débutAux.getY();
+			débutAux.setY(finAux.getY());
+			finAux.setY(aux);
+		}
+		this.setDébutDessin(débutAux);
+		this.setFinDessin(finAux);
 		pan.setVueTemp(this.créerVueForme());
 		this.getPanneauDessin().repaint();
 	}

@@ -1,19 +1,9 @@
 package fr.eseo.gpi.beanartist.vue.ui;
 
 import java.awt.Color;
-import javax.swing.JRadioButton;
-import javax.swing.plaf.basic.BasicButtonListener;
-import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.Dimension;
 import javax.swing.*;
-import java.awt.event.*;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.event.ActionListener;
-import java.util.List;
-import java.util.ArrayList;
-
-import fr.eseo.gpi.beanartist.vue.geom.VueForme;
 import fr.eseo.gpi.beanartist.controleur.outils.Outil;
 import fr.eseo.gpi.beanartist.controleur.actions.*;
 
@@ -22,13 +12,16 @@ import fr.eseo.gpi.beanartist.controleur.actions.*;
 public class PanneauBarreOutil extends JPanel {
 	
 	// Constantes
-	public static final int LARGEUR_PAR_DÉFAUT = 200;
+	public static final int LARGEUR_PAR_DÉFAUT = 170;
 	public static final int HAUTEUR_PAR_DÉFAUT = 600;
 	public static final Color COULEUR_FOND_PAR_DÉFAUT = Color.gray;
 	public static final String NOM_ACTION_EFFACER = "EFFACER TOUT";
 	public static final String NOM_ACTION_RECTANGLE = "RECTANGLE";
+	public static final String NOM_ACTION_CARRÉ = "CARRÉ";
 	public static final String NOM_ACTION_ELLIPSE = "ELLIPSE";
+	public static final String NOM_ACTION_CERCLE = "CERCLE";
 	public static final String NOM_ACTION_LIGNE = "LIGNE";
+	public static final String NOM_ACTION_TRACÉ = "TRACÉ";
 	public static final String NOM_ACTION_PLEIN = "PLEIN";
 	public static final String NOM_ACTION_VIDE = "VIDE";
 	
@@ -54,42 +47,110 @@ public class PanneauBarreOutil extends JPanel {
 	// Autres Méthodes
 	
 	private void initComponents(){
+		this.setLayout(new GridLayout(12, 1));
 		ajoutBoutonEffacer();
 		ajoutBoutonRectangle();
+		ajoutBoutonCarré();
 		ajoutBoutonEllipse();
+		ajoutBoutonCercle();
 		ajoutBoutonLigne();
+		ajoutBoutonTracé();
 		ajoutBoutonRadio();
+		ajoutBoutonCouleurFond();
+		ajoutBoutonCouleurForme();
+		ajoutBoutonSelection();
+		fenêtre.pack();
 	}
 	
 	private void ajoutBoutonEffacer(){
 		JButton button = new JButton(NOM_ACTION_EFFACER);
 		button.addActionListener(new ActionEffacer(this.getFenêtre()));
-		this.add(button, BorderLayout.NORTH);
+		button.setPreferredSize(new Dimension(160,30));
+		this.add(button);
 	}
 	
 	private void ajoutBoutonRectangle(){
 		JButton button = new JButton(NOM_ACTION_RECTANGLE);
 		button.addActionListener(new ActionRectangle(this.getFenêtre()));
-		this.add(button, BorderLayout.NORTH);
+		button.setPreferredSize(new Dimension(160,30));
+		this.add(button);
+	}
+	
+	private void ajoutBoutonCarré(){
+		JButton button = new JButton(NOM_ACTION_CARRÉ);
+		button.addActionListener(new ActionCarré(this.getFenêtre()));
+		button.setPreferredSize(new Dimension(160,30));
+		this.add(button);
 	}
 	
 	private void ajoutBoutonEllipse(){
 		JButton button = new JButton(NOM_ACTION_ELLIPSE);
 		button.addActionListener(new ActionEllipse(this.getFenêtre()));
-		this.add(button, BorderLayout.NORTH);
+		button.setPreferredSize(new Dimension(160,30));
+		this.add(button);
+	}
+	
+	private void ajoutBoutonCercle(){
+		JButton button = new JButton(NOM_ACTION_CERCLE);
+		button.addActionListener(new ActionCercle(this.getFenêtre()));
+		button.setPreferredSize(new Dimension(160,30));
+		this.add(button);
 	}
 	
 	private void ajoutBoutonLigne(){
 		JButton button = new JButton(NOM_ACTION_LIGNE);
 		button.addActionListener(new ActionLigne(this.getFenêtre()));
-		this.add(button, BorderLayout.NORTH);
+		button.setPreferredSize(new Dimension(160,30));
+		this.add(button);
+	}
+	
+	private void ajoutBoutonTracé(){
+		JButton button = new JButton(NOM_ACTION_TRACÉ);
+		button.addActionListener(new ActionTracé(this.getFenêtre()));
+		button.setPreferredSize(new Dimension(160,30));
+		this.add(button);
+	}
+	
+	private void ajoutBoutonCouleurFond(){
+		JButton button = new JButton("COULEUR FOND");
+		button.addActionListener(new ActionChoisirFond(this.getFenêtre()));
+		button.setPreferredSize(new Dimension(160,30));
+		this.add(button);
+	}
+	
+	private void ajoutBoutonCouleurForme(){
+		JButton button = new JButton("COULEUR FORME");
+		button.addActionListener(new ActionChoisirCouleur(this.getFenêtre()));
+		button.setPreferredSize(new Dimension(160,30));
+		this.add(button);
+	}
+	
+	private void ajoutBoutonSelection(){
+		JButton button = new JButton("SELECTIONNER");
+		button.addActionListener(new ActionSélectionner(this.getFenêtre()));
+		button.setPreferredSize(new Dimension(160,30));
+		this.add(button);
 	}
 	
 	private void ajoutBoutonRadio(){
-		JRadioButton plein = new JRadioButton(NOM_ACTION_PLEIN, fenêtre.getPanneauDessin().estModeRemplissage());
-		JRadioButton vide = new JRadioButton(NOM_ACTION_VIDE, !fenêtre.getPanneauDessin().estModeRemplissage());
-		this.add(plein, BorderLayout.NORTH);
-		this.add(vide, BorderLayout.NORTH);
+//		JRadioButton plein = new JRadioButton(NOM_ACTION_PLEIN, fenêtre.getPanneauDessin().estModeRemplissage());
+//		JRadioButton vide = new JRadioButton(NOM_ACTION_VIDE, !fenêtre.getPanneauDessin().estModeRemplissage());
+//		this.add(plein);
+//		this.add(vide);
+		ButtonGroup boutonRemplissage =  new ButtonGroup();
+		ActionModeRemplissage actionModeRemplissage = new ActionModeRemplissage(getFenêtre().getPanneauDessin());
+		
+		JRadioButton boutonRempli = new JRadioButton(actionModeRemplissage);
+		boutonRempli.setActionCommand("rempli");
+		JRadioButton boutonContour = new JRadioButton(actionModeRemplissage);
+		boutonContour.setActionCommand("contour");
+		
+		boutonRemplissage.add(boutonRempli);
+		boutonRempli.setText("Rempli");
+		boutonRemplissage.add(boutonContour);
+		boutonContour.setText("Contour");
+		this.add(boutonRempli);
+		this.add(boutonContour);
 	}
 	
 	// ACCESSEURS

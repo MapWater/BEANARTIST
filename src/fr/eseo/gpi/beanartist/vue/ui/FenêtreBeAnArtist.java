@@ -42,23 +42,27 @@ public class FenêtreBeAnArtist extends JFrame{
 		// Infos Basiques
 		this.setTitle(titre);
 		this.setSize(largeur, hauteur);
-		this.setBackground(couleurFond);
+		//this.setBackground(couleurFond);
 		this.setMinimumSize(new Dimension(largeur, hauteur));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setResizable (false);
 		
 	    // Layout
-	    this.windowPan = new JPanel();
-	    this.windowPan.setLayout(new BorderLayout());
-	    this.getContentPane().add(windowPan);
-	    
-	    this.splitPane = new JSplitPane( JSplitPane.HORIZONTAL_SPLIT); 
-	    this.windowPan.add(splitPane, BorderLayout.CENTER);
-	    
+//	    this.windowPan = new JPanel();
+//	    this.windowPan.setLayout(new BorderLayout());
+//	    this.getContentPane().add(windowPan);
+//	    
+//	    this.splitPane = new JSplitPane( JSplitPane.HORIZONTAL_SPLIT); 
+//	    this.windowPan.add(splitPane, BorderLayout.CENTER);
+//	    
+//		this.associerPanneauDessin(couleurFond);
+//		this.associerBarreOutil();
+//		splitPane.setLeftComponent( this.getPanneauDessin());
+//		splitPane.setRightComponent( this.getPanneauBarreOutil() );
 		this.associerPanneauDessin(couleurFond);
 		this.associerBarreOutil();
-		splitPane.setLeftComponent( this.getPanneauDessin());
-		splitPane.setRightComponent( this.getPanneauBarreOutil() );
+		this.getContentPane().add(this.panneauDessin, BorderLayout.WEST);
+		this.getContentPane().add(this.panneauBarreOutil, BorderLayout.EAST);
 		
 		this.pack();
 		this.setVisible(true);

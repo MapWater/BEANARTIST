@@ -9,7 +9,6 @@ public class PointTest{
 		Point p3 = new Point();
 		
 		System.out.println(p1);
-		System.out.println(p2);
 		System.out.println(p3);
 		
 		System.out.println(p2.getX());

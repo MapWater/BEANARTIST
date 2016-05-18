@@ -18,6 +18,13 @@ public class Point{
 		Point.incNbPoints();
 	}
 	
+	public Point(Point p){
+		// Constructeur Complet
+		this.setX(p.getX());
+		this.setY(p.getY());
+		Point.incNbPoints();
+	}
+	
 	public Point(){
 		// Constructeur par defaut
 		this(0,0);

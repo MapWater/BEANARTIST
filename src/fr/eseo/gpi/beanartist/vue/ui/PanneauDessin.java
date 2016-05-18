@@ -17,7 +17,7 @@ import fr.eseo.gpi.beanartist.modele.geom.Ligne;
 public class PanneauDessin extends JPanel{
 	
 	// Constantes
-	public static final int LARGEUR_PAR_DÉFAUT = 600;
+	public static final int LARGEUR_PAR_DÉFAUT = 800;
 	public static final int HAUTEUR_PAR_DÉFAUT = 600;
 	public static final Color COULEUR_FOND_PAR_DÉFAUT = Color.white;
 	public static final Color COULEUR_LIGNE_PAR_DÉFAUT = Color.black;
@@ -33,6 +33,12 @@ public class PanneauDessin extends JPanel{
 	private boolean rempli;
 	
 	// Constructeurs
+	
+	public PanneauDessin(int youpi, int youpa){
+	}
+	public PanneauDessin(int youpi, int youpa, Color coul){
+	}
+	
 	public PanneauDessin(Color couleurFond, Color couleurForme, FenêtreBeAnArtist fen){
 		this(LARGEUR_PAR_DÉFAUT, HAUTEUR_PAR_DÉFAUT, couleurFond, couleurForme, fen);
 	}
@@ -44,6 +50,7 @@ public class PanneauDessin extends JPanel{
 		this.couleurFond = couleurFond;
 		this.rempli = false;
 		this.setOpaque(true);
+		this.setBackground(couleurFond);
 		this.setMinimumSize(new Dimension(largeur, hauteur));
 		this.setPreferredSize(new Dimension(largeur, hauteur));
 		
@@ -117,6 +124,22 @@ public class PanneauDessin extends JPanel{
 	
 	public Outil getOutilCourant(){
 		return this.outilCourant;
+	}
+	
+	public void setCouleurFond(Color couleur){
+		this.couleurFond = couleur;		
+	}
+	
+	public Color getCouleurFond(){
+		return this.couleurFond;
+	}
+	
+	public void setCouleurLigne(Color couleur){
+		this.couleurFond = couleur;		
+	}
+	
+	public Color getCouleurLigne(){
+		return this.couleurFond;
 	}
 	
 }

@@ -19,6 +19,8 @@ public abstract class Outil
 	private PanneauDessin panneauDessin;
 	private Point début;
 	private Point fin;
+	private Point débutDessin;
+	private Point finDessin;
 	
 	// CONSTRUCTEURS
 	public Outil(){
@@ -32,15 +34,15 @@ public abstract class Outil
 	
 	// AUTRES METHODES
 	public void associer(PanneauDessin panneauDessin){
-		System.out.println(this.getPanneauDessin().getOutilCourant());
+//		System.out.println(this.getPanneauDessin().getOutilCourant());
 		if (this.getPanneauDessin().getOutilCourant() != null){
 			this.libérer();
 		}
 		this.getPanneauDessin().setOutilCourant(this);
 		this.getPanneauDessin().addMouseListener(this);
 		this.getPanneauDessin().addMouseMotionListener(this);
-		System.out.println("Associé:!");
-		System.out.println(this.getPanneauDessin().getOutilCourant());
+//		System.out.println("Associé:!");
+//		System.out.println(this.getPanneauDessin().getOutilCourant());
 	}
 	
 	private void libérer(){
@@ -64,6 +66,22 @@ public abstract class Outil
 	
 	public Point getFin(){
 		return this.fin;
+	}
+	
+	public void setDébutDessin(Point point){
+		this.débutDessin = point;
+	}
+	
+	public void setFinDessin(Point point){
+		this.finDessin = point;
+	}
+	
+	public Point getDébutDessin(){
+		return this.débutDessin;
+	}
+	
+	public Point getFinDessin(){
+		return this.finDessin;
 	}
 	
 	public void mousePressed(MouseEvent event){

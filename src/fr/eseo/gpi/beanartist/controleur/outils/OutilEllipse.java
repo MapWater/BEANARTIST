@@ -39,8 +39,8 @@ public class OutilEllipse extends OutilForme {
 	 */
 	@Override
 	protected VueForme créerVueForme() {
-		Ellipse forme = new Ellipse(this.getDébut(), this.getFin().getX()-this.getDébut().getX(), this.getFin().getY()-this.getDébut().getY());
-		VueEllipse vue = new VueEllipse(forme, this.getPanneauDessin().getCouleurForme(), true);
+		Ellipse forme = new Ellipse(this.getDébutDessin(), this.getFinDessin().getX()-this.getDébutDessin().getX(), this.getFinDessin().getY()-this.getDébutDessin().getY());
+		VueEllipse vue = new VueEllipse(forme, this.getPanneauDessin().getCouleurForme(), this.getPanneauDessin().estModeRemplissage());
 		return vue;
 	}
 

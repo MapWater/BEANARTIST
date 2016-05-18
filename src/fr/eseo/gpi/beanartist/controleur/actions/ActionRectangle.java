@@ -15,7 +15,6 @@ import fr.eseo.gpi.beanartist.vue.ui.FenêtreBeAnArtist;
  */
 public class ActionRectangle extends javax.swing.AbstractAction{
 	// CONSTANTES
-	public static final String NOM_ACTION = "Rectangle";
 	
 	// ATTRIBUTS
 	FenêtreBeAnArtist fenetre;

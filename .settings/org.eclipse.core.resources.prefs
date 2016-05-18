@@ -1,4 +1,7 @@
 eclipse.preferences.version=1
+encoding//src/fr/eseo/gpi/beanartist/BeAnArtist.java=UTF-8
+encoding//src/fr/eseo/gpi/beanartist/controleur/actions/ActionS\u00E9lectionner.java=UTF-8
+encoding//src/fr/eseo/gpi/beanartist/controleur/outils/OutilS\u00E9lection.java=UTF-8
 encoding//src/fr/eseo/gpi/beanartist/modele/geom/Carr\u00E9.java=UTF-8
 encoding//src/fr/eseo/gpi/beanartist/modele/geom/Cercle.java=UTF-8
 encoding//src/fr/eseo/gpi/beanartist/modele/geom/Ellipse.java=UTF-8
@@ -14,3 +17,7 @@ encoding//src/fr/eseo/gpi/beanartist/tests/modele/geom/LigneTest.java=UTF-8
 encoding//src/fr/eseo/gpi/beanartist/tests/modele/geom/PointTest.java=UTF-8
 encoding//src/fr/eseo/gpi/beanartist/tests/modele/geom/RectangleTest.java=UTF-8
 encoding//src/fr/eseo/gpi/beanartist/tests/modele/geom/Trac\u00E9Test.java=UTF-8
+encoding//src/fr/eseo/gpi/beanartist/xml/EnregistreurSVG.java=UTF-8
+encoding//src/fr/eseo/gpi/beanartist/xml/EnregistreurXML.java=UTF-8
+encoding//src/fr/eseo/gpi/beanartist/xml/LecteurXML.java=UTF-8
+encoding//src/fr/eseo/gpi/beanartist/xml/ProcesseurDOM.java=UTF-8

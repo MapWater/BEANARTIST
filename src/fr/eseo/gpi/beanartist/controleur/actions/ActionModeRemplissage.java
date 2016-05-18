@@ -1,44 +1,27 @@
-/**
- * 
- */
 package fr.eseo.gpi.beanartist.controleur.actions;
 
 import java.awt.event.ActionEvent;
+import javax.swing.AbstractAction;
+import fr.eseo.gpi.beanartist.vue.ui.PanneauDessin;
 
-import fr.eseo.gpi.beanartist.controleur.outils.OutilRectangle;
-import fr.eseo.gpi.beanartist.vue.ui.FenêtreBeAnArtist;
-//import fr.eseo.gpi.beanartist.vue.ui.FenetreBeAnArtist;
+public class ActionModeRemplissage extends AbstractAction {
 
-/**
- * @author Clément
- *
- */
-public class ActionModeRemplissage extends javax.swing.AbstractAction{
-	// CONSTANTES
-	public static final String NOM_ACTION = "Rectangle";
+	private static final long serialVersionUID = 1L;
 	
-	// ATTRIBUTS
-	FenêtreBeAnArtist fenetre;
+	public static final String NOM_ACTION_REMPLI = "rempli";
+	public static final String NOM_ACTION_CONTOUR = "contour";
+	private PanneauDessin panneauDessin;	
 	
-	
-	// CONSTRUCTEURS
-	public ActionModeRemplissage(FenêtreBeAnArtist fen){
-		this.fenetre = fen;
-//		System.out.println(fen);
+	public ActionModeRemplissage(PanneauDessin p){
+		super();
+		this.panneauDessin = p;
 	}
 	
-	// AUTRES METHODES
 	public void actionPerformed(ActionEvent e) {
-		this.fenetre.getPanneauDessin().setModeRemplissage(true);;
+		if(e.getActionCommand().equals("rempli")){
+			this.panneauDessin.setModeRemplissage(true);
+		}else{
+			this.panneauDessin.setModeRemplissage(false);
+		}
 	}
-	
-	// ACCESSEURS
-	public void setFenetre(FenêtreBeAnArtist fen){
-		this.fenetre = fen;
-	}
-	
-	public FenêtreBeAnArtist getFenetre(){
-		return this.fenetre;
-	}
-
 }
