@@ -66,12 +66,12 @@ public class LecteurXML extends ProcesseurDOM {
 	 */
 	public static void teste(String nomFichier) throws FileNotFoundException {
 		LecteurXML lecteur = new LecteurXML();
-		final List<VueForme> dessin = lecteur.lisDessin(nomFichier);
+		FenêtreBeAnArtist fenêtre = new FenêtreBeAnArtist();
+		final List<VueForme> dessin = lecteur.lisDessin(nomFichier, fenêtre);
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
-				FenêtreBeAnArtist fenêtre = new FenêtreBeAnArtist();
 				for (VueForme vueForme : dessin) {
-					System.out.println(vueForme);
+					//System.out.println(vueForme);
 					fenêtre.getPanneauDessin().ajouterVueForme(vueForme);
 				}
 			}
@@ -109,7 +109,7 @@ public class LecteurXML extends ProcesseurDOM {
 //		// créeVueForme, puis ajouter cette vue au dessin.
 //		return dessin;
 //	}
-	public List<VueForme> lisDessin(String nomFichier) throws FileNotFoundException {
+	public List<VueForme> lisDessin(String nomFichier, FenêtreBeAnArtist fenêtre) throws FileNotFoundException {
 		List<VueForme> dessin = new ArrayList<>();
 		chargeDocument(nomFichier);
 		Element racine = getDocument().getDocumentElement();
@@ -126,7 +126,10 @@ public class LecteurXML extends ProcesseurDOM {
 						if(noeud2.getNodeType() == Node.ELEMENT_NODE){ //normalement aucun problème
 							Element élémentFils2 = (Element) noeud2; //on convertit soit une des formes, soit fond en Element
 							if(élémentFils2.getNodeName().equals("Fond")){
-								
+								int r = Integer.parseInt(élémentFils2.getAttribute("r"));
+								int g = Integer.parseInt(élémentFils2.getAttribute("g"));
+								int b = Integer.parseInt(élémentFils2.getAttribute("b"));
+								fenêtre.getPanneauDessin().setCouleurFond(new Color(r,g,b));
 							} else {
 								dessin.add(créeVueForme(élémentFils2));
 							}
