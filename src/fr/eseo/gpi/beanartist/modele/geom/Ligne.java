@@ -1,8 +1,10 @@
 package fr.eseo.gpi.beanartist.modele.geom;
 
+import java.text.DecimalFormat;
+
 public class Ligne extends Forme{
 	
-	public static final double EPSILON = 1;
+	public static final double EPSILON = 0.1;
 	
 			// ----------   CONSTRUCTEURS   ----------
 			
@@ -15,11 +17,11 @@ public class Ligne extends Forme{
 	}
 	
 	public Ligne(Point position){
-		this(position, Forme.LARGEUR_PAR_DÉFAUT, Forme.HAUTEUR_PAR_DÉFAUT);
+		this(position, Forme.LARGEUR_PAR_DÃ‰FAUT, Forme.HAUTEUR_PAR_DÃ‰FAUT);
 	}
 	
 	public Ligne(int largeur, int hauteur){
-		this(Forme.POINT_PAR_DÉFAUT, largeur, hauteur);
+		this(Forme.POINT_PAR_DÃ‰FAUT, largeur, hauteur);
 	}
 	
 	public Ligne(Point pos1, Point pos2){
@@ -31,8 +33,8 @@ public class Ligne extends Forme{
 	}
 	
 	public Ligne(){
-		this(Forme.POINT_PAR_DÉFAUT, Forme.LARGEUR_PAR_DÉFAUT, 
-															Forme.HAUTEUR_PAR_DÉFAUT);
+		this(Forme.POINT_PAR_DÃ‰FAUT, Forme.LARGEUR_PAR_DÃ‰FAUT, 
+															Forme.HAUTEUR_PAR_DÃ‰FAUT);
 	}
 	
 			// --------   ACCESSEURS   ----------
@@ -47,6 +49,10 @@ public class Ligne extends Forme{
 		this.setP2(p2);
 	}
 	
+	public void setP1(int x, int y){
+		this.setP1(new Point(x,y));		
+	}
+	
 	public Point getP2(){
 		int p2X = this.getP1().getX()+this.getLargeur();
 		int p2Y = this.getP1().getY()+this.getHauteur();
@@ -56,6 +62,10 @@ public class Ligne extends Forme{
 	public void setP2(Point autrePosition){
 		this.setLargeur(autrePosition.getX() - this.getP1().getX() );
 		this.setHauteur(autrePosition.getY() - this.getP1().getY() );
+	}
+	
+	public void setP2(int x, int y){
+		this.setP2(new Point(x,y));		
 	}
 	
 	// ----------   AUTRES METHODES   ----------
@@ -69,7 +79,7 @@ public class Ligne extends Forme{
 	}
 	
 	public int getP2X(){
-		return this.getP1().getX();
+		return this.getP2().getX();
 	}
 	
 	public int getP2Y(){
@@ -140,7 +150,23 @@ public class Ligne extends Forme{
 		this.setP2(nouveauPoint);
 	}
 	
-	public double périmètre(){
+	public void dÃ©placerDe(int deltaX, int deltaY){
+		this.setPosition(new Point(this.getPosition().getX()+deltaX, this.getPosition().getY()+deltaY));
+	}
+	
+	public void dÃ©placerVers(Point p){
+		this.setPosition(p);
+	}
+	
+	public void homothÃ©tieX(double coef){
+		this.setP2((int)(this.getP1X()+(double)this.getLargeur()*coef), this.getP2Y());
+	}
+	
+	public void homothÃ©tieY(double coef){
+		this.setP2(this.getP2X(), (int)(this.getP1Y()+(double)this.getHauteur()*coef));
+	}
+	
+	public double pÃ©rimÃ¨tre(){
 		return Math.sqrt(this.getLargeur()*this.getLargeur()+this.getHauteur()*this.getHauteur());
 	}
 	
@@ -149,18 +175,24 @@ public class Ligne extends Forme{
 	}
 	
 	public boolean contient(int x, int y ){
-		return this.contient(new Point(x, y));
+		double X1 = this.getP1X()-x;
+		double Y1 = this.getP1Y()-y;
+		double X2 = this.getP2X()-x;
+		double Y2 = this.getP2Y()-y;
+		double d1 = Math.sqrt(Math.pow(X1,2)+Math.pow(Y1,2));
+		double d2 = Math.sqrt(Math.pow(X2,2)+Math.pow(Y2,2));
+		return (d2+d1 - this.pÃ©rimÃ¨tre() < EPSILON);
 	}
 	
 	public boolean contient(Point p){
-		double coef = (this.getP2Y()-this.getP1Y())/(this.getP2X()-this.getP1X());
-		for(int i = ; i)
+		return this.contient(p.getX(), p.getY());
 	}
 	
 	public String toString(){
+		DecimalFormat formatter = new DecimalFormat("###.##");
 		String s = "[Ligne] p1 : ("+this.getP1().getX()+","+this.getP1().getY()+"),  ";
 		s+= "p2 : ("+this.getP2().getX()+","+this.getP2().getY()+") ";
-		s+= "longueur : "+this.périmètre();	
+		s+= "longueur : "+formatter.format(this.pÃ©rimÃ¨tre());	
 		return s;
 	}
 }

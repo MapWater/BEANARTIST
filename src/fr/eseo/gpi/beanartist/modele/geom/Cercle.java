@@ -4,7 +4,7 @@ package fr.eseo.gpi.beanartist.modele.geom;
 
 public class Cercle extends Ellipse{
 	
-	//-------------------     Méthodes    -----------------
+	//-------------------     Mï¿½thodes    -----------------
 
 	//					CONSTRUCTEURS
 	
@@ -17,16 +17,16 @@ public class Cercle extends Ellipse{
 	}
 	
 	public Cercle (Point position){
-		this(position, Forme.LARGEUR_PAR_DÉFAUT);
+		this(position, Forme.LARGEUR_PAR_DÃ‰FAUT);
 	}
 	
 	public Cercle (int diametre){
-		this(Forme.POINT_PAR_DÉFAUT, diametre);
+		this(Forme.POINT_PAR_DÃ‰FAUT, diametre);
 	}
 
 	public Cercle(){
 		// Constructeur  - Dimensions non renseignees
-		this(Forme.POINT_PAR_DÉFAUT, Forme.LARGEUR_PAR_DÉFAUT);
+		this(Forme.POINT_PAR_DÃ‰FAUT, Forme.LARGEUR_PAR_DÃ‰FAUT);
 	}
 
 	//					ACCESSEURS
@@ -52,7 +52,7 @@ public class Cercle extends Ellipse{
 	
 	//					AUTRES METHODES
 	
-	public double périmètre(){
+	public double pÃ©rimÃ¨tre(){
 		return Math.PI*this.getLargeur();
 	}
 	

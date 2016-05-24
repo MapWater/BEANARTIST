@@ -7,7 +7,7 @@ public class Point{
 	int y;
 	
 	
-	//-------------------     Méthodes    -----------------
+	//-------------------     Mï¿½thodes    -----------------
 	
 	//					CONSTRUCTEURS
 	
@@ -15,6 +15,13 @@ public class Point{
 		// Constructeur Complet
 		this.setX(x2);
 		this.setY(y2);
+		Point.incNbPoints();
+	}
+	
+	public Point(Point p){
+		// Constructeur Complet
+		this.setX(p.getX());
+		this.setY(p.getY());
 		Point.incNbPoints();
 	}
 	
@@ -45,12 +52,12 @@ public class Point{
 		Point.nbPoints++;
 	}
 	
-	public void déplacerVers(int nX, int nY){
+	public void dÃ©placerVers(int nX, int nY){
 		this.setX(nX);
 		this.setY(nY);
 	}
 	
-	public void déplacerDe(int dX, int dY){
+	public void dÃ©placerDe(int dX, int dY){
 		this.setX(this.getX()+dX);
 		this.setY(this.getY()+dY);
 	}
