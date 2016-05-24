@@ -80,20 +80,13 @@ public class EnregistreurXML extends ProcesseurDOM {
 		Element racine = getDocument().getDocumentElement();
 		// Pour chaque vue du dessin, créer un élément DOM associé et l'ajouter
 		// dans l'élément racine du document.
-		NodeList noeudsFils = racine.getChildNodes();
-		for (int i = 0; i < noeudsFils.getLength(); i++){
-			Node noeud = noeudsFils.item(i);
-			if(noeud.getNodeType() == Node.ELEMENT_NODE){ 
-				Element élémentFils = (Element) noeud; 
-				if (élémentFils.getNodeName() == "ZoneDeDessin"){ 
-					for (int j = 0 ; j < dessin.size() ; j++){
-						Element élément = créeElémentVueForme(dessin.get(i));
-						noeud.appendChild(élément);
-					}
-				}else{ 
-				}
-			}else if (noeud.getNodeType() == Node.TEXT_NODE){ 
-			}
+		Element auteur = getDocument().createElement("Auteur");
+		racine.appendChild(auteur);
+		Element zoneDeDessin = getDocument().createElement("ZoneDeDessin");
+		racine.appendChild(zoneDeDessin);
+		for (int i = 0 ; i < dessin.size() ; i++){
+			Element élément = créeElémentVueForme(dessin.get(i));
+			zoneDeDessin.appendChild(élément);
 		}
 		enregistreDocument(nomFichier);
 	}
@@ -145,7 +138,15 @@ public class EnregistreurXML extends ProcesseurDOM {
 	 * @return élément DOM représentant le rectangle
 	 */
 	public Element créeElémentRectangle(Rectangle forme) {
-		return null;
+		Element élément = getDocument().createElement("Rectangle");
+		écrisAttribut(élément, "largeur", forme.getLargeur());
+		écrisAttribut(élément, "hauteur", forme.getHauteur());
+		écrisAttribut(élément, "abscisse", forme.getMinX());
+		écrisAttribut(élément, "ordonnee", forme.getMinY());
+		écrisAttribut(élément, "r", 3);
+		écrisAttribut(élément, "g", 12);
+		écrisAttribut(élément, "b", 58);
+		return élément;
 	}
 
 	/**

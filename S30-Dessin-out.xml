@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dessin>
+    <Auteur/>
+    <ZoneDeDessin>
+        <Rectangle abscisse="6" b="58" g="12" hauteur="120" largeur="80"
+            ordonnee="5" r="3"/>
+    </ZoneDeDessin>
+</dessin>
