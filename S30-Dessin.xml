@@ -3,15 +3,15 @@
 <Dessin>
 	<Auteur prenom='Clement' nom ='Begnaud'/>
 	<ZoneDeDessin>
-		<Fond couleur='white' largeur='100' hauteur='100'/>
-		<Rectangle largeur='8' hauteur='12' abscisse='6' ordonnee='5' couleurFond='pink'/>
-		<Carre cote='8' abscisse='6' ordonnee='5' couleurFond='yellow' />
-		<Ellipse largeur='8' hauteur='12' abscisse='6' ordonnee='5' couleurFond='pink'/>
-		<Cercle cote='8' abscisse='6' ordonnee='5' couleurFond='yellow' />
-		<Ligne largeur='8' hauteur='11' abscisse='4' ordonnee='5' couleurFond='blue'/>
-		<Trace largeur='24' hauteur='18' abscisse='42' ordonnee='13' couleurFond = 'black'>
-			<Ligne largeur='12' hauteur='12' abscisse='42' ordonnee='13' couleurFond = 'black'/>
-			<Ligne largeur='12' hauteur='6' abscisse='54' ordonnee='25' couleurFond = 'black'/>
+		<Fond r='255' g = '255' b = '255' largeur='800' hauteur='600'/>
+		<Rectangle largeur='80' hauteur='120' abscisse='6' ordonnee='5' r='255' g = '0' b = '0'/>
+		<Carre cote='200' abscisse='49' ordonnee='300' r='0' g = '0' b = '0' />
+		<Ellipse largeur='70' hauteur='140' abscisse='350' ordonnee='350' r='255' g = '0' b = '255'/>
+		<Cercle cote='75' abscisse='6' ordonnee='5' r='255' g = '255' b = '0' />
+		<Ligne largeur='12' hauteur='400' abscisse='4' ordonnee='5' r='255' g = '0' b = '0'/>
+		<Trace r='0' g = '255' b = '0'>
+			<Ligne largeur='100' hauteur='0' abscisse='42' ordonnee='13' r='255' g = '0' b = '0'/>
+			<Ligne largeur='200' hauteur='100' abscisse='142' ordonnee='13' r='255' g = '0' b = '0'/>
 		</Trace>
 	</ZoneDeDessin>
 </Dessin>

@@ -153,7 +153,11 @@ public class LecteurXML extends ProcesseurDOM {
 		String nom = element.getNodeName();
 		boolean rempli = false;
 		
-		Color couleur = Color.blue; //(""+element.getAttribute("couleurFond"));
+		int r = Integer.parseInt(element.getAttribute("r"));
+		int g = Integer.parseInt(element.getAttribute("g"));
+		int b = Integer.parseInt(element.getAttribute("b"));
+		Color couleur = new Color(r,g,b); //(""+element.getAttribute("couleurFond"));
+		
 		if (nom.equals("Rectangle")) {
 			Rectangle forme = créeRectangle(element);
 			vue = new VueRectangle(forme, couleur, rempli);
