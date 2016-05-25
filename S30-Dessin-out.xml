@@ -2,7 +2,14 @@
 <dessin>
     <Auteur/>
     <ZoneDeDessin>
-        <Rectangle abscisse="6" b="58" g="12" hauteur="120" largeur="80"
-            ordonnee="5" r="3"/>
+        <Rectangle abscisse="6" b="0" g="0" hauteur="120" largeur="80"
+            ordonnee="5" r="255"/>
+        <Carre abscisse="49" b="0" cote="200" g="0" ordonnee="300" r="0"/>
+        <Ellipse abscisse="350" b="255" g="0" hauteur="140" largeur="70"
+            ordonnee="350" r="255"/>
+        <Cercle abscisse="6" b="0" diametre="75" g="255" ordonnee="5" r="255"/>
+        <Ligne abscisse="4" b="0" g="0" hauteur="400" largeur="12"
+            ordonnee="5" r="255"/>
+        <Trace b="0" g="255" r="0"/>
     </ZoneDeDessin>
 </dessin>

@@ -83,32 +83,44 @@ public class LecteurXML extends ProcesseurDOM {
 	 * l'intégralité du dessin sous la forme d'une liste de vues représentant
 	 * les formes stockées dans le fichier.
 	 * 
-	 * @param nomFichier le nom du fichier XML
+	 * @param nomFichier le nom du fichier XML, la fenêtre dont il faut changer le fond du PanneauDessin
 	 * @return l'intégralité du dessin sous la forme d'une liste de vues
 	 * @throws FileNotFoundException si le fichier n'est pas trouvé ou
 	 *             accessible
 	 */
-//	public List<VueForme> lisDessin(String nomFichier) throws FileNotFoundException {
-//		List<VueForme> dessin = new ArrayList<>();
-//		chargeDocument(nomFichier);
-//		Element racine = getDocument().getDocumentElement();
-//		NodeList noeudsFils = racine.getChildNodes();
-//		for (int i = 0; i < noeudsFils.getLength(); i++){
-//			Node noeud = noeudsFils.item(i);
-//			System.out.println(racine.getChildNodes().item(i).getNodeName());
-//			if (noeud.getNodeType() == Node.ELEMENT_NODE){
-//				Element élémentFils = (Element) noeud;
-//				
-//			}
-//			else if (noeud.getNodeType() == Node.TEXT_NODE){
-//			}
-//		}
-//		// Pour chaque noeud fils de l'élément racine du document,
-//		// si le noeud est un élément DOM, convertir cet élément en une vue sur
-//		// la forme que l'élément représente en utilisant la méthode
-//		// créeVueForme, puis ajouter cette vue au dessin.
-//		return dessin;
-//	}
+	public List<VueForme> lisDessin(String nomFichier) throws FileNotFoundException {
+		List<VueForme> dessin = new ArrayList<>();
+		chargeDocument(nomFichier);
+		Element racine = getDocument().getDocumentElement();
+		// Pour chaque noeud fils de l'élément racine du document,
+		NodeList noeudsFils = racine.getChildNodes();
+		for (int i = 0; i < noeudsFils.getLength(); i++){
+			Node noeud = noeudsFils.item(i); //noeud prend soit Auteur, soit ZoneDeDessin
+			if(noeud.getNodeType() == Node.ELEMENT_NODE){ //true pour Auteur et ZoneDeDessin
+				Element élémentFils = (Element) noeud; //on converti soit Auteur, soit ZoneDeDessin en Element
+				if (élémentFils.getNodeName() == "ZoneDeDessin"){ //true pour ZoneDeDessin
+					NodeList noeudsFils2 = élémentFils.getChildNodes();
+					for (int j = 0; j < noeudsFils2.getLength(); j++){
+						Node noeud2 = noeudsFils2.item(j); //noeud2 prend soit une des formes, soit le fond
+						if(noeud2.getNodeType() == Node.ELEMENT_NODE){ //normalement aucun problème
+							Element élémentFils2 = (Element) noeud2; //on convertit soit une des formes, soit fond en Element
+							if(élémentFils2.getNodeName().equals("Fond")){
+								// Cette méthode ne prend pas la fenêtre en paramètre:
+								// Ne fait rien
+							} else {
+								dessin.add(créeVueForme(élémentFils2));
+							}
+						}else if (noeud.getNodeType() == Node.TEXT_NODE){ //au cas où
+						}
+					}
+				}else{ //on ne fait rien si c'était Auteur
+				}
+			}else if (noeud.getNodeType() == Node.TEXT_NODE){ //au cas où
+			}
+		}
+		return dessin;
+	}
+	
 	public List<VueForme> lisDessin(String nomFichier, FenêtreBeAnArtist fenêtre) throws FileNotFoundException {
 		List<VueForme> dessin = new ArrayList<>();
 		chargeDocument(nomFichier);
