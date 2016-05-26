@@ -174,18 +174,22 @@ public class LecteurXML extends ProcesseurDOM {
 		Color couleur = new Color(r,g,b); //(""+element.getAttribute("couleurFond"));
 		
 		if (nom.equals("Rectangle")) {
+			rempli = Boolean.valueOf(element.getAttribute("rempli"));
 			Rectangle forme = créeRectangle(element);
 			vue = new VueRectangle(forme, couleur, rempli);
 		}
 		else if (nom.equals("Carre")) {
+			rempli = Boolean.valueOf(element.getAttribute("rempli"));
 			Carré forme = créeCarré(element);
 			vue = new VueCarré(forme, couleur, rempli);
 		}
 		else if (nom.equals("Ellipse")) {
+			rempli = Boolean.valueOf(element.getAttribute("rempli"));
 			Ellipse forme = créeEllipse(element);
 			vue = new VueEllipse(forme, couleur, rempli);
 		}
 		else if (nom.equals("Cercle")) {
+			rempli = Boolean.valueOf(element.getAttribute("rempli"));
 			Cercle forme = créeCercle(element);
 			vue = new VueCercle(forme, couleur, rempli);
 		}

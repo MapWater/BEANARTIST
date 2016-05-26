@@ -134,6 +134,10 @@ public abstract class ProcesseurDOM {
 	public void écrisAttribut(Element élément, String nomAttribut, int valeurAttribut) {
 		élément.setAttribute(nomAttribut, String.valueOf(valeurAttribut));
 	}
+	
+	public void écrisAttribut(Element élément, String nomAttribut, boolean valeurAttribut) {
+		élément.setAttribute(nomAttribut, String.valueOf(valeurAttribut));
+	}
 
 	/**
 	 * Renvoie la valeur entière stockée dans l'élément simple donné. Soit
