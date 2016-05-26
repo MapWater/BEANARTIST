@@ -15,7 +15,7 @@ import fr.eseo.gpi.beanartist.modele.geom.Ligne;
 import fr.eseo.gpi.beanartist.modele.geom.Point;
 import fr.eseo.gpi.beanartist.modele.geom.Rectangle;
 import fr.eseo.gpi.beanartist.modele.geom.Tracé;
-import fr.eseo.gpi.beanartist.vue.geom.VueForme;
+import fr.eseo.gpi.beanartist.vue.geom.*;
 
 /**
  * Un enregistreur XML est un processeur DOM responsable de l'enregistrement
@@ -80,20 +80,13 @@ public class EnregistreurXML extends ProcesseurDOM {
 		Element racine = getDocument().getDocumentElement();
 		// Pour chaque vue du dessin, créer un élément DOM associé et l'ajouter
 		// dans l'élément racine du document.
-		NodeList noeudsFils = racine.getChildNodes();
-		for (int i = 0; i < noeudsFils.getLength(); i++){
-			Node noeud = noeudsFils.item(i);
-			if(noeud.getNodeType() == Node.ELEMENT_NODE){ 
-				Element élémentFils = (Element) noeud; 
-				if (élémentFils.getNodeName() == "ZoneDeDessin"){ 
-					for (int j = 0 ; j < dessin.size() ; j++){
-						Element élément = créeElémentVueForme(dessin.get(i));
-						noeud.appendChild(élément);
-					}
-				}else{ 
-				}
-			}else if (noeud.getNodeType() == Node.TEXT_NODE){ 
-			}
+		Element auteur = getDocument().createElement("Auteur");
+		racine.appendChild(auteur);
+		Element zoneDeDessin = getDocument().createElement("ZoneDeDessin");
+		racine.appendChild(zoneDeDessin);
+		for (int i = 0 ; i < dessin.size() ; i++){
+			Element élément = créeElémentVueForme(dessin.get(i));
+			zoneDeDessin.appendChild(élément);
 		}
 		enregistreDocument(nomFichier);
 	}
@@ -109,28 +102,22 @@ public class EnregistreurXML extends ProcesseurDOM {
 		Element élément;
 		String nom = vueForme.getClass().getSimpleName();
 		if (nom.equals("VueRectangle")) {
-			Rectangle forme = (Rectangle) vueForme.getForme();
-			élément = créeElémentRectangle(forme);
+			élément = créeElémentRectangle(vueForme);
 		}
 		else if (nom.equals("VueCarré")) {
-			Carré forme = (Carré) vueForme.getForme();
-			élément = créeElémentCarré(forme);
+			élément = créeElémentCarré(vueForme);
 		}
 		else if (nom.equals("VueEllipse")) {
-			Ellipse forme = (Ellipse) vueForme.getForme();
-			élément = créeElémentEllipse(forme);
+			élément = créeElémentEllipse(vueForme);
 		}
 		else if (nom.equals("VueCercle")) {
-			Cercle forme = (Cercle) vueForme.getForme();
-			élément = créeElémentCercle(forme);
+			élément = créeElémentCercle(vueForme);
 		}
 		else if (nom.equals("VueLigne")) {
-			Ligne forme = (Ligne) vueForme.getForme();
-			élément = créeElémentLigne(forme);
+			élément = créeElémentLigne(vueForme);
 		}
 		else if (nom.equals("VueTracé")) {
-			Tracé forme = (Tracé) vueForme.getForme();
-			élément = créeElémentTracé(forme);
+			élément = créeElémentTracé(vueForme);
 		}
 		else {
 			throw new Error("Vue non gérée");
@@ -144,8 +131,18 @@ public class EnregistreurXML extends ProcesseurDOM {
 	 * @param forme le rectangle
 	 * @return élément DOM représentant le rectangle
 	 */
-	public Element créeElémentRectangle(Rectangle forme) {
-		return null;
+	public Element créeElémentRectangle(VueForme vue) {
+		Rectangle forme = (Rectangle)vue.getForme();
+		Element élément = getDocument().createElement("Rectangle");
+		écrisAttribut(élément, "largeur", forme.getLargeur());
+		écrisAttribut(élément, "hauteur", forme.getHauteur());
+		écrisAttribut(élément, "abscisse", forme.getMinX());
+		écrisAttribut(élément, "ordonnee", forme.getMinY());
+		écrisAttribut(élément, "rempli", vue.estRempli());
+		écrisAttribut(élément, "r", vue.getCouleurLigne().getRed());
+		écrisAttribut(élément, "g", vue.getCouleurLigne().getGreen());
+		écrisAttribut(élément, "b", vue.getCouleurLigne().getBlue());
+		return élément;
 	}
 
 	/**
@@ -153,26 +150,56 @@ public class EnregistreurXML extends ProcesseurDOM {
 	 * @param forme le carré
 	 * @return élément DOM représentant le carré
 	 */
-	public Element créeElémentCarré(Rectangle forme) {
-		return null;
+	public Element créeElémentCarré(VueForme vue) {
+		Carré forme = (Carré)vue.getForme();
+		Element élément = getDocument().createElement("Carre");
+		écrisAttribut(élément, "cote", (int)forme.getCote());
+		écrisAttribut(élément, "abscisse", forme.getMinX());
+		écrisAttribut(élément, "ordonnee", forme.getMinY());
+		écrisAttribut(élément, "rempli", vue.estRempli());
+		écrisAttribut(élément, "r", vue.getCouleurLigne().getRed());
+		écrisAttribut(élément, "g", vue.getCouleurLigne().getGreen());
+		écrisAttribut(élément, "b", vue.getCouleurLigne().getBlue());
+		return élément;
 	}
+	
 
 	/**
 	 * Renvoie un nouvel élément DOM représentant l'ellipse donnée.
 	 * @param forme l'ellipse
 	 * @return élément DOM représentant l'ellipse
 	 */
-	public Element créeElémentEllipse(Ellipse forme) {
-		return null;
+	public Element créeElémentEllipse(VueForme vue) {
+		Ellipse forme = (Ellipse)vue.getForme();
+		Element élément = getDocument().createElement("Ellipse");
+		écrisAttribut(élément, "largeur", forme.getLargeur());
+		écrisAttribut(élément, "hauteur", forme.getHauteur());
+		écrisAttribut(élément, "abscisse", forme.getMinX());
+		écrisAttribut(élément, "ordonnee", forme.getMinY());
+		écrisAttribut(élément, "rempli", vue.estRempli());
+		écrisAttribut(élément, "r", vue.getCouleurLigne().getRed());
+		écrisAttribut(élément, "g", vue.getCouleurLigne().getGreen());
+		écrisAttribut(élément, "b", vue.getCouleurLigne().getBlue());
+		return élément;
 	}
+	
 
 	/**
 	 * Renvoie un nouvel élément DOM représentant le cercle donné.
 	 * @param forme le cercle
 	 * @return élément DOM représentant le cercle
 	 */
-	public Element créeElémentCercle(Cercle forme) {
-		return null;
+	public Element créeElémentCercle(VueForme vue) {
+		Cercle forme = (Cercle)vue.getForme();
+		Element élément = getDocument().createElement("Cercle");
+		écrisAttribut(élément, "cote", (int)forme.getHauteur());
+		écrisAttribut(élément, "abscisse", forme.getMinX());
+		écrisAttribut(élément, "ordonnee", forme.getMinY());
+		écrisAttribut(élément, "rempli", vue.estRempli());
+		écrisAttribut(élément, "r", vue.getCouleurLigne().getRed());
+		écrisAttribut(élément, "g", vue.getCouleurLigne().getGreen());
+		écrisAttribut(élément, "b", vue.getCouleurLigne().getBlue());
+		return élément;
 	}
 
 	/**
@@ -180,8 +207,18 @@ public class EnregistreurXML extends ProcesseurDOM {
 	 * @param forme la ligne
 	 * @return élément DOM représentant la ligne
 	 */
-	public Element créeElémentLigne(Ligne forme) {
-		return null;
+	public Element créeElémentLigne(VueForme vue) {
+		Ligne forme = (Ligne)vue.getForme();
+		Element élément = getDocument().createElement("Ligne");
+		écrisAttribut(élément, "largeur", forme.getLargeur());
+		écrisAttribut(élément, "hauteur", forme.getHauteur());
+		écrisAttribut(élément, "abscisse", forme.getMinX());
+		écrisAttribut(élément, "ordonnee", forme.getMinY());
+		écrisAttribut(élément, "rempli", vue.estRempli());
+		écrisAttribut(élément, "r", vue.getCouleurLigne().getRed());
+		écrisAttribut(élément, "g", vue.getCouleurLigne().getGreen());
+		écrisAttribut(élément, "b", vue.getCouleurLigne().getBlue());
+		return élément;
 	}
 
 	/**
@@ -189,8 +226,26 @@ public class EnregistreurXML extends ProcesseurDOM {
 	 * @param forme le tracé
 	 * @return élément DOM représentant le tracé
 	 */
-	public Element créeElémentTracé(Tracé forme) {
-		return null;
+	public Element créeElémentTracé(VueForme vue) {
+		Element élément = getDocument().createElement("Trace");
+		Element ligne;
+		écrisAttribut(élément, "r", vue.getCouleurLigne().getRed());
+		écrisAttribut(élément, "g", vue.getCouleurLigne().getGreen());
+		écrisAttribut(élément, "b", vue.getCouleurLigne().getBlue());
+		for(Ligne l : ((Tracé)vue.getForme()).getLignes()){
+			ligne = getDocument().createElement("Ligne");
+			écrisAttribut(ligne, "largeur", l.getLargeur());
+			écrisAttribut(ligne, "hauteur", l.getHauteur());
+			écrisAttribut(ligne, "abscisse", l.getMinX());
+			écrisAttribut(ligne, "ordonnee", l.getMinY());
+			écrisAttribut(ligne, "rempli", vue.estRempli());
+			écrisAttribut(ligne, "r", vue.getCouleurLigne().getRed());
+			écrisAttribut(ligne, "g", vue.getCouleurLigne().getGreen());
+			écrisAttribut(ligne, "b", vue.getCouleurLigne().getBlue());
+			élément.appendChild(ligne);
+		}
+		
+		return élément;
 	}
 
 }
