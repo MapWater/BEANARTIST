@@ -103,21 +103,43 @@ public class EnregistreurXML extends ProcesseurDOM {
 		String nom = vueForme.getClass().getSimpleName();
 		if (nom.equals("VueRectangle")) {
 			élément = créeElémentRectangle(vueForme);
+			écrisAttribut(élément, "rempli", vueForme.estRempli());
+			écrisAttribut(élément, "r", vueForme.getCouleurLigne().getRed());
+			écrisAttribut(élément, "g", vueForme.getCouleurLigne().getGreen());
+			écrisAttribut(élément, "b", vueForme.getCouleurLigne().getBlue());
 		}
 		else if (nom.equals("VueCarré")) {
 			élément = créeElémentCarré(vueForme);
+			écrisAttribut(élément, "rempli", vueForme.estRempli());
+			écrisAttribut(élément, "r", vueForme.getCouleurLigne().getRed());
+			écrisAttribut(élément, "g", vueForme.getCouleurLigne().getGreen());
+			écrisAttribut(élément, "b", vueForme.getCouleurLigne().getBlue());
 		}
 		else if (nom.equals("VueEllipse")) {
 			élément = créeElémentEllipse(vueForme);
+			écrisAttribut(élément, "rempli", vueForme.estRempli());
+			écrisAttribut(élément, "r", vueForme.getCouleurLigne().getRed());
+			écrisAttribut(élément, "g", vueForme.getCouleurLigne().getGreen());
+			écrisAttribut(élément, "b", vueForme.getCouleurLigne().getBlue());
 		}
 		else if (nom.equals("VueCercle")) {
 			élément = créeElémentCercle(vueForme);
+			écrisAttribut(élément, "rempli", vueForme.estRempli());
+			écrisAttribut(élément, "r", vueForme.getCouleurLigne().getRed());
+			écrisAttribut(élément, "g", vueForme.getCouleurLigne().getGreen());
+			écrisAttribut(élément, "b", vueForme.getCouleurLigne().getBlue());
 		}
 		else if (nom.equals("VueLigne")) {
 			élément = créeElémentLigne(vueForme);
+			écrisAttribut(élément, "r", vueForme.getCouleurLigne().getRed());
+			écrisAttribut(élément, "g", vueForme.getCouleurLigne().getGreen());
+			écrisAttribut(élément, "b", vueForme.getCouleurLigne().getBlue());
 		}
 		else if (nom.equals("VueTracé")) {
 			élément = créeElémentTracé(vueForme);
+			écrisAttribut(élément, "r", vueForme.getCouleurLigne().getRed());
+			écrisAttribut(élément, "g", vueForme.getCouleurLigne().getGreen());
+			écrisAttribut(élément, "b", vueForme.getCouleurLigne().getBlue());
 		}
 		else {
 			throw new Error("Vue non gérée");
@@ -138,10 +160,7 @@ public class EnregistreurXML extends ProcesseurDOM {
 		écrisAttribut(élément, "hauteur", forme.getHauteur());
 		écrisAttribut(élément, "abscisse", forme.getMinX());
 		écrisAttribut(élément, "ordonnee", forme.getMinY());
-		écrisAttribut(élément, "rempli", vue.estRempli());
-		écrisAttribut(élément, "r", vue.getCouleurLigne().getRed());
-		écrisAttribut(élément, "g", vue.getCouleurLigne().getGreen());
-		écrisAttribut(élément, "b", vue.getCouleurLigne().getBlue());
+		
 		return élément;
 	}
 
@@ -156,10 +175,6 @@ public class EnregistreurXML extends ProcesseurDOM {
 		écrisAttribut(élément, "cote", (int)forme.getCote());
 		écrisAttribut(élément, "abscisse", forme.getMinX());
 		écrisAttribut(élément, "ordonnee", forme.getMinY());
-		écrisAttribut(élément, "rempli", vue.estRempli());
-		écrisAttribut(élément, "r", vue.getCouleurLigne().getRed());
-		écrisAttribut(élément, "g", vue.getCouleurLigne().getGreen());
-		écrisAttribut(élément, "b", vue.getCouleurLigne().getBlue());
 		return élément;
 	}
 	
@@ -176,10 +191,6 @@ public class EnregistreurXML extends ProcesseurDOM {
 		écrisAttribut(élément, "hauteur", forme.getHauteur());
 		écrisAttribut(élément, "abscisse", forme.getMinX());
 		écrisAttribut(élément, "ordonnee", forme.getMinY());
-		écrisAttribut(élément, "rempli", vue.estRempli());
-		écrisAttribut(élément, "r", vue.getCouleurLigne().getRed());
-		écrisAttribut(élément, "g", vue.getCouleurLigne().getGreen());
-		écrisAttribut(élément, "b", vue.getCouleurLigne().getBlue());
 		return élément;
 	}
 	
@@ -195,10 +206,6 @@ public class EnregistreurXML extends ProcesseurDOM {
 		écrisAttribut(élément, "cote", (int)forme.getHauteur());
 		écrisAttribut(élément, "abscisse", forme.getMinX());
 		écrisAttribut(élément, "ordonnee", forme.getMinY());
-		écrisAttribut(élément, "rempli", vue.estRempli());
-		écrisAttribut(élément, "r", vue.getCouleurLigne().getRed());
-		écrisAttribut(élément, "g", vue.getCouleurLigne().getGreen());
-		écrisAttribut(élément, "b", vue.getCouleurLigne().getBlue());
 		return élément;
 	}
 
@@ -213,11 +220,7 @@ public class EnregistreurXML extends ProcesseurDOM {
 		écrisAttribut(élément, "largeur", forme.getLargeur());
 		écrisAttribut(élément, "hauteur", forme.getHauteur());
 		écrisAttribut(élément, "abscisse", forme.getMinX());
-		écrisAttribut(élément, "ordonnee", forme.getMinY());
-		écrisAttribut(élément, "rempli", vue.estRempli());
-		écrisAttribut(élément, "r", vue.getCouleurLigne().getRed());
-		écrisAttribut(élément, "g", vue.getCouleurLigne().getGreen());
-		écrisAttribut(élément, "b", vue.getCouleurLigne().getBlue());
+		écrisAttribut(élément, "ordonnee", forme.getMinY());		
 		return élément;
 	}
 
@@ -229,16 +232,12 @@ public class EnregistreurXML extends ProcesseurDOM {
 	public Element créeElémentTracé(VueForme vue) {
 		Element élément = getDocument().createElement("Trace");
 		Element ligne;
-		écrisAttribut(élément, "r", vue.getCouleurLigne().getRed());
-		écrisAttribut(élément, "g", vue.getCouleurLigne().getGreen());
-		écrisAttribut(élément, "b", vue.getCouleurLigne().getBlue());
 		for(Ligne l : ((Tracé)vue.getForme()).getLignes()){
 			ligne = getDocument().createElement("Ligne");
 			écrisAttribut(ligne, "largeur", l.getLargeur());
 			écrisAttribut(ligne, "hauteur", l.getHauteur());
 			écrisAttribut(ligne, "abscisse", l.getMinX());
 			écrisAttribut(ligne, "ordonnee", l.getMinY());
-			écrisAttribut(ligne, "rempli", vue.estRempli());
 			écrisAttribut(ligne, "r", vue.getCouleurLigne().getRed());
 			écrisAttribut(ligne, "g", vue.getCouleurLigne().getGreen());
 			écrisAttribut(ligne, "b", vue.getCouleurLigne().getBlue());

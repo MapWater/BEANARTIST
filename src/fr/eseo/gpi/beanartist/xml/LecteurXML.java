@@ -171,7 +171,7 @@ public class LecteurXML extends ProcesseurDOM {
 		int r = Integer.parseInt(element.getAttribute("r"));
 		int g = Integer.parseInt(element.getAttribute("g"));
 		int b = Integer.parseInt(element.getAttribute("b"));
-		Color couleur = new Color(r,g,b); //(""+element.getAttribute("couleurFond"));
+		Color couleur = new Color(r,g,b); 
 		
 		if (nom.equals("Rectangle")) {
 			rempli = Boolean.valueOf(element.getAttribute("rempli"));

@@ -10,12 +10,12 @@
         <Cercle abscisse="6" b="0" cote="75" g="255" ordonnee="5"
             r="255" rempli="false"/>
         <Ligne abscisse="4" b="0" g="0" hauteur="400" largeur="12"
-            ordonnee="5" r="255" rempli="true"/>
+            ordonnee="5" r="255"/>
         <Trace b="0" g="255" r="0">
             <Ligne abscisse="42" b="0" g="255" hauteur="0" largeur="100"
-                ordonnee="13" r="0" rempli="true"/>
+                ordonnee="13" r="0"/>
             <Ligne abscisse="142" b="0" g="255" hauteur="100"
-                largeur="200" ordonnee="13" r="0" rempli="true"/>
+                largeur="200" ordonnee="13" r="0"/>
         </Trace>
     </ZoneDeDessin>
 </dessin>
