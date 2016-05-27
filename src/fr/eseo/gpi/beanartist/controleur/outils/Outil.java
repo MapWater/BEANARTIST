@@ -28,25 +28,20 @@ public abstract class Outil
 	
 	public Outil(PanneauDessin panneauDessin){
 		this.setPanneauDessin(panneauDessin);
-		System.out.println(this.getPanneauDessin());
 		this.associer(panneauDessin);
 	}
 	
 	// AUTRES METHODES
 	public void associer(PanneauDessin panneauDessin){
-//		System.out.println(this.getPanneauDessin().getOutilCourant());
 		if (this.getPanneauDessin().getOutilCourant() != null){
 			this.libérer();
 		}
 		this.getPanneauDessin().setOutilCourant(this);
 		this.getPanneauDessin().addMouseListener(this);
 		this.getPanneauDessin().addMouseMotionListener(this);
-//		System.out.println("Associ�:!");
-//		System.out.println(this.getPanneauDessin().getOutilCourant());
 	}
 	
 	private void libérer(){
-		System.out.println("libérer");
 		this.getPanneauDessin().removeMouseListener(getPanneauDessin().getOutilCourant());
 		this.getPanneauDessin().removeMouseMotionListener(getPanneauDessin().getOutilCourant());
 		this.getPanneauDessin().setOutilCourant(null);
@@ -94,7 +89,6 @@ public abstract class Outil
 	
 	public void mouseReleased(MouseEvent event){
 		this.setFin(new Point(event.getX(), event.getY()));
-		//this.getPanneauDessin().ajouterVueForme();
 	}
 	
 	public void mouseEntered(MouseEvent event){
