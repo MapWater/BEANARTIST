@@ -66,12 +66,11 @@ public class LecteurXML extends ProcesseurDOM {
 	 */
 	public static void teste(String nomFichier) throws FileNotFoundException {
 		LecteurXML lecteur = new LecteurXML();
-		FenêtreBeAnArtist fenêtre = new FenêtreBeAnArtist();
+		final FenêtreBeAnArtist fenêtre = new FenêtreBeAnArtist();
 		final List<VueForme> dessin = lecteur.lisDessin(nomFichier, fenêtre);
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				for (VueForme vueForme : dessin) {
-					//System.out.println(vueForme);
 					fenêtre.getPanneauDessin().ajouterVueForme(vueForme);
 				}
 			}
