@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dessin>
+    <Auteur/>
+    <ZoneDeDessin>
+        <Ellipse abscisse="317" b="0" g="0" hauteur="148" largeur="205"
+            ordonnee="125" r="0" rempli="false"/>
+        <Ellipse abscisse="332" b="0" g="0" hauteur="156" largeur="182"
+            ordonnee="372" r="0" rempli="false"/>
+        <Ellipse abscisse="614" b="0" g="0" hauteur="79" largeur="74"
+            ordonnee="279" r="0" rempli="false"/>
+        <Ellipse abscisse="152" b="0" g="0" hauteur="105" largeur="79"
+            ordonnee="195" r="0" rempli="false"/>
+        <Ellipse abscisse="247" b="0" g="0" hauteur="77" largeur="88"
+            ordonnee="63" r="0" rempli="true"/>
+        <Ligne abscisse="416" b="0" g="255" hauteur="-70" largeur="-135"
+            ordonnee="198" r="255"/>
+        <Ligne abscisse="298" b="0" g="255" hauteur="112" largeur="-160"
+            ordonnee="285" r="255"/>
+        <Ligne abscisse="234" b="0" g="255" hauteur="80" largeur="92"
+            ordonnee="423" r="255"/>
+        <Trace b="0" g="255" r="255">
+            <Ligne abscisse="577" b="0" g="255" hauteur="0" largeur="0"
+                ordonnee="169" r="255"/>
+            <Ligne abscisse="574" b="0" g="255" hauteur="-5"
+                largeur="-3" ordonnee="164" r="255"/>
+            <Ligne abscisse="571" b="0" g="255" hauteur="-6"
+                largeur="-3" ordonnee="158" r="255"/>
+            <Ligne abscisse="569" b="0" g="255" hauteur="-5"
+                largeur="-2" ordonnee="153" r="255"/>
+            <Ligne abscisse="564" b="0" g="255" hauteur="-9"
+                largeur="-5" ordonnee="144" r="255"/>
+            <Ligne abscisse="561" b="0" g="255" hauteur="-10"
+                largeur="-3" ordonnee="134" r="255"/>
+            <Ligne abscisse="556" b="0" g="255" hauteur="-7"
+                largeur="-5" ordonnee="127" r="255"/>
+            <Ligne abscisse="552" b="0" g="255" hauteur="-7"
+                largeur="-4" ordonnee="120" r="255"/>
+            <Ligne abscisse="549" b="0" g="255" hauteur="-9"
+                largeur="-3" ordonnee="111" r="255"/>
+            <Ligne abscisse="545" b="0" g="255" hauteur="-8"
+                largeur="-4" ordonnee="103" r="255"/>
+            <Ligne abscisse="539" b="0" g="255" hauteur="-9"
+                largeur="-6" ordonnee="94" r="255"/>
+            <Ligne abscisse="535" b="0" g="255" hauteur="-7"
+                largeur="-4" ordonnee="87" r="255"/>
+            <Ligne abscisse="530" b="0" g="255" hauteur="-5"
+                largeur="-5" ordonnee="82" r="255"/>
+            <Ligne abscisse="526" b="0" g="255" hauteur="-5"
+                largeur="-4" ordonnee="77" r="255"/>
+            <Ligne abscisse="519" b="0" g="255" hauteur="-5"
+                largeur="-7" ordonnee="72" r="255"/>
+            <Ligne abscisse="512" b="0" g="255" hauteur="-3"
+                largeur="-7" ordonnee="69" r="255"/>
+            <Ligne abscisse="504" b="0" g="255" hauteur="-1"
+                largeur="-8" ordonnee="68" r="255"/>
+            <Ligne abscisse="493" b="0" g="255" hauteur="0"
+                largeur="-11" ordonnee="68" r="255"/>
+            <Ligne abscisse="482" b="0" g="255" hauteur="0"
+                largeur="-11" ordonnee="68" r="255"/>
+            <Ligne abscisse="474" b="0" g="255" hauteur="0" largeur="-8"
+                ordonnee="68" r="255"/>
+            <Ligne abscisse="463" b="0" g="255" hauteur="2"
+                largeur="-11" ordonnee="68" r="255"/>
+            <Ligne abscisse="454" b="0" g="255" hauteur="6" largeur="-9"
+                ordonnee="70" r="255"/>
+            <Ligne abscisse="445" b="0" g="255" hauteur="6" largeur="-9"
+                ordonnee="76" r="255"/>
+            <Ligne abscisse="435" b="0" g="255" hauteur="7"
+                largeur="-10" ordonnee="82" r="255"/>
+            <Ligne abscisse="431" b="0" g="255" hauteur="7" largeur="-4"
+                ordonnee="89" r="255"/>
+            <Ligne abscisse="425" b="0" g="255" hauteur="11"
+                largeur="-6" ordonnee="96" r="255"/>
+            <Ligne abscisse="419" b="0" g="255" hauteur="11"
+                largeur="-6" ordonnee="107" r="255"/>
+            <Ligne abscisse="416" b="0" g="255" hauteur="11"
+                largeur="-3" ordonnee="118" r="255"/>
+            <Ligne abscisse="412" b="0" g="255" hauteur="11"
+                largeur="-4" ordonnee="129" r="255"/>
+            <Ligne abscisse="410" b="0" g="255" hauteur="11"
+                largeur="-2" ordonnee="140" r="255"/>
+            <Ligne abscisse="408" b="0" g="255" hauteur="8" largeur="-2"
+                ordonnee="151" r="255"/>
+            <Ligne abscisse="403" b="0" g="255" hauteur="12"
+                largeur="-5" ordonnee="159" r="255"/>
+            <Ligne abscisse="402" b="0" g="255" hauteur="5" largeur="-1"
+                ordonnee="171" r="255"/>
+            <Ligne abscisse="399" b="0" g="255" hauteur="5" largeur="-3"
+                ordonnee="176" r="255"/>
+            <Ligne abscisse="396" b="0" g="255" hauteur="6" largeur="-3"
+                ordonnee="181" r="255"/>
+            <Ligne abscisse="391" b="0" g="255" hauteur="4" largeur="-5"
+                ordonnee="187" r="255"/>
+            <Ligne abscisse="384" b="0" g="255" hauteur="1" largeur="-7"
+                ordonnee="191" r="255"/>
+            <Ligne abscisse="376" b="0" g="255" hauteur="1" largeur="-8"
+                ordonnee="192" r="255"/>
+            <Ligne abscisse="367" b="0" g="255" hauteur="0" largeur="-9"
+                ordonnee="193" r="255"/>
+            <Ligne abscisse="357" b="0" g="255" hauteur="0"
+                largeur="-10" ordonnee="193" r="255"/>
+            <Ligne abscisse="345" b="0" g="255" hauteur="-3"
+                largeur="-12" ordonnee="190" r="255"/>
+            <Ligne abscisse="333" b="0" g="255" hauteur="-7"
+                largeur="-12" ordonnee="183" r="255"/>
+            <Ligne abscisse="320" b="0" g="255" hauteur="-7"
+                largeur="-13" ordonnee="176" r="255"/>
+            <Ligne abscisse="307" b="0" g="255" hauteur="-7"
+                largeur="-13" ordonnee="169" r="255"/>
+            <Ligne abscisse="295" b="0" g="255" hauteur="-8"
+                largeur="-12" ordonnee="161" r="255"/>
+            <Ligne abscisse="287" b="0" g="255" hauteur="-6"
+                largeur="-8" ordonnee="155" r="255"/>
+            <Ligne abscisse="283" b="0" g="255" hauteur="-4"
+                largeur="-4" ordonnee="151" r="255"/>
+            <Ligne abscisse="277" b="0" g="255" hauteur="-6"
+                largeur="-6" ordonnee="145" r="255"/>
+            <Ligne abscisse="272" b="0" g="255" hauteur="-5"
+                largeur="-5" ordonnee="140" r="255"/>
+            <Ligne abscisse="268" b="0" g="255" hauteur="-5"
+                largeur="-4" ordonnee="135" r="255"/>
+            <Ligne abscisse="264" b="0" g="255" hauteur="-6"
+                largeur="-4" ordonnee="129" r="255"/>
+            <Ligne abscisse="259" b="0" g="255" hauteur="-5"
+                largeur="-5" ordonnee="124" r="255"/>
+            <Ligne abscisse="256" b="0" g="255" hauteur="-4"
+                largeur="-3" ordonnee="120" r="255"/>
+            <Ligne abscisse="253" b="0" g="255" hauteur="-4"
+                largeur="-3" ordonnee="116" r="255"/>
+            <Ligne abscisse="251" b="0" g="255" hauteur="-5"
+                largeur="-2" ordonnee="111" r="255"/>
+            <Ligne abscisse="249" b="0" g="255" hauteur="-2"
+                largeur="-2" ordonnee="109" r="255"/>
+            <Ligne abscisse="245" b="0" g="255" hauteur="-1"
+                largeur="-4" ordonnee="108" r="255"/>
+            <Ligne abscisse="239" b="0" g="255" hauteur="-5"
+                largeur="-6" ordonnee="103" r="255"/>
+            <Ligne abscisse="238" b="0" g="255" hauteur="-1"
+                largeur="-1" ordonnee="102" r="255"/>
+            <Ligne abscisse="236" b="0" g="255" hauteur="-1"
+                largeur="-2" ordonnee="101" r="255"/>
+            <Ligne abscisse="232" b="0" g="255" hauteur="-2"
+                largeur="-4" ordonnee="99" r="255"/>
+            <Ligne abscisse="227" b="0" g="255" hauteur="-3"
+                largeur="-5" ordonnee="96" r="255"/>
+            <Ligne abscisse="225" b="0" g="255" hauteur="-1"
+                largeur="-2" ordonnee="95" r="255"/>
+            <Ligne abscisse="225" b="0" g="255" hauteur="-2" largeur="0"
+                ordonnee="93" r="255"/>
+            <Ligne abscisse="225" b="0" g="255" hauteur="-1" largeur="0"
+                ordonnee="92" r="255"/>
+            <Ligne abscisse="225" b="0" g="255" hauteur="-4" largeur="2"
+                ordonnee="88" r="255"/>
+            <Ligne abscisse="227" b="0" g="255" hauteur="-1" largeur="6"
+                ordonnee="87" r="255"/>
+            <Ligne abscisse="233" b="0" g="255" hauteur="-2"
+                largeur="11" ordonnee="85" r="255"/>
+            <Ligne abscisse="244" b="0" g="255" hauteur="-1"
+                largeur="12" ordonnee="84" r="255"/>
+            <Ligne abscisse="256" b="0" g="255" hauteur="0" largeur="14"
+                ordonnee="84" r="255"/>
+            <Ligne abscisse="270" b="0" g="255" hauteur="0" largeur="10"
+                ordonnee="84" r="255"/>
+            <Ligne abscisse="280" b="0" g="255" hauteur="0" largeur="11"
+                ordonnee="84" r="255"/>
+            <Ligne abscisse="291" b="0" g="255" hauteur="0" largeur="9"
+                ordonnee="84" r="255"/>
+            <Ligne abscisse="300" b="0" g="255" hauteur="0" largeur="9"
+                ordonnee="84" r="255"/>
+            <Ligne abscisse="309" b="0" g="255" hauteur="1" largeur="6"
+                ordonnee="84" r="255"/>
+            <Ligne abscisse="315" b="0" g="255" hauteur="3" largeur="5"
+                ordonnee="85" r="255"/>
+            <Ligne abscisse="320" b="0" g="255" hauteur="1" largeur="2"
+                ordonnee="88" r="255"/>
+            <Ligne abscisse="322" b="0" g="255" hauteur="2" largeur="2"
+                ordonnee="89" r="255"/>
+            <Ligne abscisse="324" b="0" g="255" hauteur="2" largeur="0"
+                ordonnee="91" r="255"/>
+            <Ligne abscisse="324" b="0" g="255" hauteur="2" largeur="2"
+                ordonnee="93" r="255"/>
+            <Ligne abscisse="326" b="0" g="255" hauteur="2" largeur="1"
+                ordonnee="95" r="255"/>
+            <Ligne abscisse="327" b="0" g="255" hauteur="3" largeur="0"
+                ordonnee="97" r="255"/>
+            <Ligne abscisse="327" b="0" g="255" hauteur="4" largeur="1"
+                ordonnee="100" r="255"/>
+            <Ligne abscisse="328" b="0" g="255" hauteur="3" largeur="0"
+                ordonnee="104" r="255"/>
+            <Ligne abscisse="328" b="0" g="255" hauteur="2" largeur="0"
+                ordonnee="107" r="255"/>
+            <Ligne abscisse="328" b="0" g="255" hauteur="2" largeur="0"
+                ordonnee="109" r="255"/>
+            <Ligne abscisse="328" b="0" g="255" hauteur="1" largeur="0"
+                ordonnee="111" r="255"/>
+            <Ligne abscisse="328" b="0" g="255" hauteur="1" largeur="0"
+                ordonnee="112" r="255"/>
+            <Ligne abscisse="328" b="0" g="255" hauteur="0" largeur="1"
+                ordonnee="113" r="255"/>
+            <Ligne abscisse="329" b="0" g="255" hauteur="0" largeur="2"
+                ordonnee="113" r="255"/>
+            <Ligne abscisse="331" b="0" g="255" hauteur="-5" largeur="4"
+                ordonnee="108" r="255"/>
+            <Ligne abscisse="335" b="0" g="255" hauteur="-6" largeur="4"
+                ordonnee="102" r="255"/>
+            <Ligne abscisse="339" b="0" g="255" hauteur="-9" largeur="5"
+                ordonnee="93" r="255"/>
+            <Ligne abscisse="344" b="0" g="255" hauteur="-8" largeur="5"
+                ordonnee="85" r="255"/>
+            <Ligne abscisse="349" b="0" g="255" hauteur="-7" largeur="6"
+                ordonnee="78" r="255"/>
+            <Ligne abscisse="355" b="0" g="255" hauteur="-9" largeur="3"
+                ordonnee="69" r="255"/>
+            <Ligne abscisse="358" b="0" g="255" hauteur="-6" largeur="3"
+                ordonnee="63" r="255"/>
+            <Ligne abscisse="361" b="0" g="255" hauteur="-4" largeur="2"
+                ordonnee="59" r="255"/>
+            <Ligne abscisse="363" b="0" g="255" hauteur="-3" largeur="0"
+                ordonnee="56" r="255"/>
+            <Ligne abscisse="363" b="0" g="255" hauteur="-2" largeur="0"
+                ordonnee="54" r="255"/>
+            <Ligne abscisse="363" b="0" g="255" hauteur="-2" largeur="0"
+                ordonnee="52" r="255"/>
+            <Ligne abscisse="363" b="0" g="255" hauteur="-3" largeur="0"
+                ordonnee="49" r="255"/>
+            <Ligne abscisse="362" b="0" g="255" hauteur="-1"
+                largeur="-1" ordonnee="48" r="255"/>
+            <Ligne abscisse="358" b="0" g="255" hauteur="-2"
+                largeur="-4" ordonnee="46" r="255"/>
+            <Ligne abscisse="352" b="0" g="255" hauteur="0" largeur="-6"
+                ordonnee="46" r="255"/>
+            <Ligne abscisse="336" b="0" g="255" hauteur="0"
+                largeur="-16" ordonnee="46" r="255"/>
+            <Ligne abscisse="328" b="0" g="255" hauteur="0" largeur="-8"
+                ordonnee="46" r="255"/>
+            <Ligne abscisse="317" b="0" g="255" hauteur="4"
+                largeur="-11" ordonnee="46" r="255"/>
+            <Ligne abscisse="308" b="0" g="255" hauteur="3" largeur="-9"
+                ordonnee="50" r="255"/>
+            <Ligne abscisse="298" b="0" g="255" hauteur="6"
+                largeur="-10" ordonnee="53" r="255"/>
+            <Ligne abscisse="286" b="0" g="255" hauteur="7"
+                largeur="-12" ordonnee="59" r="255"/>
+            <Ligne abscisse="279" b="0" g="255" hauteur="7" largeur="-7"
+                ordonnee="66" r="255"/>
+            <Ligne abscisse="272" b="0" g="255" hauteur="6" largeur="-7"
+                ordonnee="73" r="255"/>
+            <Ligne abscisse="269" b="0" g="255" hauteur="5" largeur="-3"
+                ordonnee="79" r="255"/>
+            <Ligne abscisse="266" b="0" g="255" hauteur="4" largeur="-3"
+                ordonnee="84" r="255"/>
+            <Ligne abscisse="263" b="0" g="255" hauteur="5" largeur="-3"
+                ordonnee="88" r="255"/>
+            <Ligne abscisse="262" b="0" g="255" hauteur="1" largeur="-1"
+                ordonnee="93" r="255"/>
+            <Ligne abscisse="261" b="0" g="255" hauteur="4" largeur="-1"
+                ordonnee="94" r="255"/>
+            <Ligne abscisse="259" b="0" g="255" hauteur="1" largeur="-2"
+                ordonnee="98" r="255"/>
+            <Ligne abscisse="255" b="0" g="255" hauteur="1" largeur="-4"
+                ordonnee="99" r="255"/>
+            <Ligne abscisse="249" b="0" g="255" hauteur="0" largeur="-6"
+                ordonnee="100" r="255"/>
+            <Ligne abscisse="244" b="0" g="255" hauteur="0" largeur="-5"
+                ordonnee="100" r="255"/>
+            <Ligne abscisse="237" b="0" g="255" hauteur="0" largeur="-7"
+                ordonnee="100" r="255"/>
+            <Ligne abscisse="233" b="0" g="255" hauteur="0" largeur="-4"
+                ordonnee="100" r="255"/>
+            <Ligne abscisse="230" b="0" g="255" hauteur="0" largeur="-3"
+                ordonnee="100" r="255"/>
+            <Ligne abscisse="223" b="0" g="255" hauteur="0" largeur="-7"
+                ordonnee="100" r="255"/>
+            <Ligne abscisse="217" b="0" g="255" hauteur="0" largeur="-6"
+                ordonnee="100" r="255"/>
+            <Ligne abscisse="211" b="0" g="255" hauteur="-1"
+                largeur="-6" ordonnee="99" r="255"/>
+            <Ligne abscisse="208" b="0" g="255" hauteur="0" largeur="-3"
+                ordonnee="99" r="255"/>
+            <Ligne abscisse="205" b="0" g="255" hauteur="-2"
+                largeur="-3" ordonnee="97" r="255"/>
+            <Ligne abscisse="202" b="0" g="255" hauteur="0" largeur="-3"
+                ordonnee="97" r="255"/>
+            <Ligne abscisse="200" b="0" g="255" hauteur="0" largeur="-2"
+                ordonnee="97" r="255"/>
+            <Ligne abscisse="200" b="0" g="255" hauteur="-1" largeur="0"
+                ordonnee="96" r="255"/>
+            <Ligne abscisse="200" b="0" g="255" hauteur="-1" largeur="0"
+                ordonnee="95" r="255"/>
+            <Ligne abscisse="200" b="0" g="255" hauteur="-2" largeur="0"
+                ordonnee="93" r="255"/>
+            <Ligne abscisse="200" b="0" g="255" hauteur="-2" largeur="4"
+                ordonnee="91" r="255"/>
+            <Ligne abscisse="204" b="0" g="255" hauteur="-1" largeur="4"
+                ordonnee="90" r="255"/>
+            <Ligne abscisse="208" b="0" g="255" hauteur="0" largeur="6"
+                ordonnee="90" r="255"/>
+            <Ligne abscisse="214" b="0" g="255" hauteur="0" largeur="3"
+                ordonnee="90" r="255"/>
+            <Ligne abscisse="217" b="0" g="255" hauteur="0" largeur="4"
+                ordonnee="90" r="255"/>
+            <Ligne abscisse="221" b="0" g="255" hauteur="0" largeur="2"
+                ordonnee="90" r="255"/>
+            <Ligne abscisse="223" b="0" g="255" hauteur="3" largeur="4"
+                ordonnee="90" r="255"/>
+            <Ligne abscisse="227" b="0" g="255" hauteur="6" largeur="5"
+                ordonnee="93" r="255"/>
+            <Ligne abscisse="232" b="0" g="255" hauteur="7" largeur="5"
+                ordonnee="99" r="255"/>
+            <Ligne abscisse="237" b="0" g="255" hauteur="7" largeur="5"
+                ordonnee="106" r="255"/>
+            <Ligne abscisse="242" b="0" g="255" hauteur="10" largeur="4"
+                ordonnee="113" r="255"/>
+            <Ligne abscisse="246" b="0" g="255" hauteur="6" largeur="3"
+                ordonnee="123" r="255"/>
+            <Ligne abscisse="249" b="0" g="255" hauteur="7" largeur="4"
+                ordonnee="129" r="255"/>
+            <Ligne abscisse="253" b="0" g="255" hauteur="5" largeur="2"
+                ordonnee="136" r="255"/>
+            <Ligne abscisse="255" b="0" g="255" hauteur="6" largeur="3"
+                ordonnee="141" r="255"/>
+            <Ligne abscisse="258" b="0" g="255" hauteur="5" largeur="2"
+                ordonnee="147" r="255"/>
+            <Ligne abscisse="260" b="0" g="255" hauteur="5" largeur="1"
+                ordonnee="152" r="255"/>
+            <Ligne abscisse="261" b="0" g="255" hauteur="3" largeur="2"
+                ordonnee="157" r="255"/>
+            <Ligne abscisse="263" b="0" g="255" hauteur="3" largeur="2"
+                ordonnee="160" r="255"/>
+            <Ligne abscisse="265" b="0" g="255" hauteur="5" largeur="1"
+                ordonnee="163" r="255"/>
+            <Ligne abscisse="266" b="0" g="255" hauteur="3" largeur="0"
+                ordonnee="168" r="255"/>
+            <Ligne abscisse="266" b="0" g="255" hauteur="4" largeur="1"
+                ordonnee="171" r="255"/>
+            <Ligne abscisse="267" b="0" g="255" hauteur="3" largeur="0"
+                ordonnee="175" r="255"/>
+            <Ligne abscisse="267" b="0" g="255" hauteur="5" largeur="0"
+                ordonnee="178" r="255"/>
+            <Ligne abscisse="267" b="0" g="255" hauteur="4" largeur="0"
+                ordonnee="183" r="255"/>
+            <Ligne abscisse="267" b="0" g="255" hauteur="2" largeur="0"
+                ordonnee="187" r="255"/>
+            <Ligne abscisse="267" b="0" g="255" hauteur="3" largeur="0"
+                ordonnee="189" r="255"/>
+            <Ligne abscisse="266" b="0" g="255" hauteur="5" largeur="-1"
+                ordonnee="192" r="255"/>
+            <Ligne abscisse="262" b="0" g="255" hauteur="3" largeur="-4"
+                ordonnee="197" r="255"/>
+            <Ligne abscisse="257" b="0" g="255" hauteur="5" largeur="-5"
+                ordonnee="200" r="255"/>
+            <Ligne abscisse="251" b="0" g="255" hauteur="5" largeur="-6"
+                ordonnee="205" r="255"/>
+            <Ligne abscisse="245" b="0" g="255" hauteur="6" largeur="-6"
+                ordonnee="210" r="255"/>
+            <Ligne abscisse="243" b="0" g="255" hauteur="3" largeur="-2"
+                ordonnee="216" r="255"/>
+            <Ligne abscisse="240" b="0" g="255" hauteur="6" largeur="-3"
+                ordonnee="219" r="255"/>
+            <Ligne abscisse="237" b="0" g="255" hauteur="3" largeur="-3"
+                ordonnee="225" r="255"/>
+            <Ligne abscisse="236" b="0" g="255" hauteur="6" largeur="-1"
+                ordonnee="228" r="255"/>
+            <Ligne abscisse="234" b="0" g="255" hauteur="3" largeur="-2"
+                ordonnee="234" r="255"/>
+            <Ligne abscisse="234" b="0" g="255" hauteur="6" largeur="0"
+                ordonnee="237" r="255"/>
+            <Ligne abscisse="234" b="0" g="255" hauteur="4" largeur="0"
+                ordonnee="243" r="255"/>
+            <Ligne abscisse="234" b="0" g="255" hauteur="3" largeur="0"
+                ordonnee="247" r="255"/>
+            <Ligne abscisse="234" b="0" g="255" hauteur="3" largeur="0"
+                ordonnee="250" r="255"/>
+            <Ligne abscisse="234" b="0" g="255" hauteur="3" largeur="3"
+                ordonnee="253" r="255"/>
+            <Ligne abscisse="237" b="0" g="255" hauteur="4" largeur="2"
+                ordonnee="256" r="255"/>
+            <Ligne abscisse="239" b="0" g="255" hauteur="4" largeur="3"
+                ordonnee="260" r="255"/>
+            <Ligne abscisse="242" b="0" g="255" hauteur="3" largeur="2"
+                ordonnee="264" r="255"/>
+            <Ligne abscisse="244" b="0" g="255" hauteur="5" largeur="2"
+                ordonnee="267" r="255"/>
+            <Ligne abscisse="246" b="0" g="255" hauteur="2" largeur="3"
+                ordonnee="272" r="255"/>
+            <Ligne abscisse="249" b="0" g="255" hauteur="5" largeur="1"
+                ordonnee="274" r="255"/>
+            <Ligne abscisse="250" b="0" g="255" hauteur="5" largeur="5"
+                ordonnee="279" r="255"/>
+            <Ligne abscisse="255" b="0" g="255" hauteur="6" largeur="3"
+                ordonnee="284" r="255"/>
+            <Ligne abscisse="258" b="0" g="255" hauteur="3" largeur="4"
+                ordonnee="290" r="255"/>
+            <Ligne abscisse="262" b="0" g="255" hauteur="5" largeur="6"
+                ordonnee="293" r="255"/>
+            <Ligne abscisse="268" b="0" g="255" hauteur="4" largeur="6"
+                ordonnee="298" r="255"/>
+            <Ligne abscisse="274" b="0" g="255" hauteur="6" largeur="7"
+                ordonnee="302" r="255"/>
+            <Ligne abscisse="281" b="0" g="255" hauteur="4" largeur="6"
+                ordonnee="308" r="255"/>
+            <Ligne abscisse="287" b="0" g="255" hauteur="2" largeur="3"
+                ordonnee="312" r="255"/>
+            <Ligne abscisse="290" b="0" g="255" hauteur="2" largeur="3"
+                ordonnee="314" r="255"/>
+            <Ligne abscisse="293" b="0" g="255" hauteur="2" largeur="2"
+                ordonnee="316" r="255"/>
+            <Ligne abscisse="295" b="0" g="255" hauteur="2" largeur="1"
+                ordonnee="318" r="255"/>
+            <Ligne abscisse="296" b="0" g="255" hauteur="1" largeur="1"
+                ordonnee="320" r="255"/>
+            <Ligne abscisse="297" b="0" g="255" hauteur="3" largeur="0"
+                ordonnee="321" r="255"/>
+            <Ligne abscisse="297" b="0" g="255" hauteur="3" largeur="0"
+                ordonnee="324" r="255"/>
+            <Ligne abscisse="297" b="0" g="255" hauteur="3" largeur="0"
+                ordonnee="327" r="255"/>
+            <Ligne abscisse="297" b="0" g="255" hauteur="6" largeur="0"
+                ordonnee="330" r="255"/>
+            <Ligne abscisse="295" b="0" g="255" hauteur="6" largeur="-2"
+                ordonnee="336" r="255"/>
+            <Ligne abscisse="294" b="0" g="255" hauteur="3" largeur="-1"
+                ordonnee="342" r="255"/>
+            <Ligne abscisse="292" b="0" g="255" hauteur="6" largeur="-2"
+                ordonnee="345" r="255"/>
+            <Ligne abscisse="292" b="0" g="255" hauteur="5" largeur="0"
+                ordonnee="351" r="255"/>
+            <Ligne abscisse="292" b="0" g="255" hauteur="7" largeur="0"
+                ordonnee="356" r="255"/>
+            <Ligne abscisse="292" b="0" g="255" hauteur="8" largeur="0"
+                ordonnee="363" r="255"/>
+            <Ligne abscisse="292" b="0" g="255" hauteur="5" largeur="0"
+                ordonnee="371" r="255"/>
+            <Ligne abscisse="292" b="0" g="255" hauteur="6" largeur="3"
+                ordonnee="376" r="255"/>
+            <Ligne abscisse="295" b="0" g="255" hauteur="10" largeur="7"
+                ordonnee="382" r="255"/>
+            <Ligne abscisse="302" b="0" g="255" hauteur="10" largeur="9"
+                ordonnee="392" r="255"/>
+            <Ligne abscisse="311" b="0" g="255" hauteur="6" largeur="6"
+                ordonnee="402" r="255"/>
+            <Ligne abscisse="317" b="0" g="255" hauteur="7" largeur="9"
+                ordonnee="408" r="255"/>
+            <Ligne abscisse="326" b="0" g="255" hauteur="4" largeur="11"
+                ordonnee="415" r="255"/>
+        </Trace>
+        <Rectangle abscisse="450" b="0" g="255" hauteur="148"
+            largeur="192" ordonnee="71" r="255" rempli="true"/>
+        <Rectangle abscisse="253" b="0" g="255" hauteur="146"
+            largeur="136" ordonnee="189" r="255" rempli="true"/>
+        <Rectangle abscisse="136" b="0" g="255" hauteur="137"
+            largeur="132" ordonnee="404" r="255" rempli="true"/>
+    </ZoneDeDessin>
+</dessin>

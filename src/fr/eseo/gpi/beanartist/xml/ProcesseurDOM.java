@@ -138,6 +138,21 @@ public abstract class ProcesseurDOM {
 	public void écrisAttribut(Element élément, String nomAttribut, boolean valeurAttribut) {
 		élément.setAttribute(nomAttribut, String.valueOf(valeurAttribut));
 	}
+	
+	public void écrisAttribut(Element élément, String nomAttribut, String valeurAttribut) {
+		élément.setAttribute(nomAttribut, String.valueOf(valeurAttribut));
+	}
+	
+	public void écrisAttributsCouleur(Element élément, String couleur, boolean estRempli){
+		String style = "";
+		if (estRempli){
+			style += "fill:"+couleur+";stroke-width:1;";
+		} else {
+			style += "fill:none;stroke-width:1;";
+		}
+		style += "stroke:"+couleur;
+		écrisAttribut(élément, "style", style);
+	}
 
 	/**
 	 * Renvoie la valeur entière stockée dans l'élément simple donné. Soit

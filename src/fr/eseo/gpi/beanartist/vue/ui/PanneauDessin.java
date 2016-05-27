@@ -102,6 +102,10 @@ public class PanneauDessin extends JPanel{
 		return this.vueFormes;
 	}
 	
+	public void  setVueFormes(List<VueForme> vueFormes){
+		this.vueFormes = vueFormes;
+	}
+	
 	public VueForme getVueTemp(){
 		return this.vueTemp;
 	}

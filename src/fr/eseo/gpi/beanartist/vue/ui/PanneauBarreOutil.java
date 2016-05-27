@@ -1,6 +1,7 @@
 package fr.eseo.gpi.beanartist.vue.ui;
 
 import java.awt.Color;
+import javax.swing.filechooser.*;
 import java.awt.GridLayout;
 import java.awt.Dimension;
 import javax.swing.*;
@@ -24,6 +25,10 @@ public class PanneauBarreOutil extends JPanel {
 	public static final String NOM_ACTION_TRACÉ = "TRACÉ";
 	public static final String NOM_ACTION_PLEIN = "PLEIN";
 	public static final String NOM_ACTION_VIDE = "VIDE";
+	public static final String NOM_ACTION_OUVRIR = "OUVRIR";
+	public static final String NOM_ACTION_ENREGISTRER = "ENREGISTRER";
+	public static final String NOM_ACTION_EXPORTER = "EXPORTER";
+	
 	
 	private FenêtreBeAnArtist fenêtre;
 	private Outil outilCourant;
@@ -59,6 +64,7 @@ public class PanneauBarreOutil extends JPanel {
 		ajoutBoutonCouleurFond();
 		ajoutBoutonCouleurForme();
 		ajoutBoutonSelection();
+		ajoutBoutonsEnregistrement();
 		fenêtre.pack();
 	}
 	
@@ -133,10 +139,6 @@ public class PanneauBarreOutil extends JPanel {
 	}
 	
 	private void ajoutBoutonRadio(){
-//		JRadioButton plein = new JRadioButton(NOM_ACTION_PLEIN, fenêtre.getPanneauDessin().estModeRemplissage());
-//		JRadioButton vide = new JRadioButton(NOM_ACTION_VIDE, !fenêtre.getPanneauDessin().estModeRemplissage());
-//		this.add(plein);
-//		this.add(vide);
 		ButtonGroup boutonRemplissage =  new ButtonGroup();
 		ActionModeRemplissage actionModeRemplissage = new ActionModeRemplissage(getFenêtre().getPanneauDessin());
 		
@@ -151,6 +153,23 @@ public class PanneauBarreOutil extends JPanel {
 		boutonContour.setText("Contour");
 		this.add(boutonRempli);
 		this.add(boutonContour);
+	}
+	
+	private void ajoutBoutonsEnregistrement(){
+		JButton ouvrir = new JButton(NOM_ACTION_OUVRIR);
+		ouvrir.addActionListener(new ActionOuvrir(this.getFenêtre()));
+		ouvrir.setPreferredSize(new Dimension(160,30));
+		this.add(ouvrir);
+		
+		JButton enregistrer = new JButton(NOM_ACTION_ENREGISTRER);
+		enregistrer.addActionListener(new ActionEnregistrer(this.getFenêtre()));
+		enregistrer.setPreferredSize(new Dimension(160,30));
+		this.add(enregistrer);
+		
+		JButton exporter = new JButton(NOM_ACTION_EXPORTER);
+		exporter.addActionListener(new ActionExporter(this.getFenêtre()));
+		exporter.setPreferredSize(new Dimension(160,30));
+		this.add(exporter);
 	}
 	
 	// ACCESSEURS

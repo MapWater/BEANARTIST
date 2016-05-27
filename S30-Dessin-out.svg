@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+    <rect height="120"
+        style="fill:none;stroke-width:1;stroke:rgb(255,0,0)" width="80"
+        x="6" y="5"/>
+    <rect height="200"
+        style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0)"
+        width="200" x="49" y="300"/>
+    <ellipse cx="385" cy="420" rx="35" ry="70" style="fill:rgb(255,0,255);stroke-width:1;stroke:rgb(255,0,255)"/>
+    <circle cx="43" cy="42" r="37" style="fill:none;stroke-width:1;stroke:rgb(255,255,0)"/>
+    <line style="fill:none;stroke-width:1;stroke:rgb(255,0,0)" x1="4"
+        x2="16" y1="5" y2="405"/>
+    <polyline points="42,13 142,13 342,113 " style="fill:none;stroke-width:1;stroke:rgb(0,255,0)"/>
+</svg>
